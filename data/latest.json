@@ -112,7 +112,7 @@
       {
         "regiao": "Noroeste · Juína",
         "chuva_observada_7d_mm": 24.3,
-        "previsao_7d_mm": 49,
+        "previsao_7d_mm": 49.0,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; não é observação oficial INMET)",
         "latitude": -11.42,
@@ -131,15 +131,13 @@
       },
       {
         "regiao": "Sudeste · Primavera do Leste",
-        "chuva_observada_7d_mm": 2,
-        "previsao_7d_mm": null,
+        "chuva_observada_7d_mm": 2.0,
+        "previsao_7d_mm": 69.8,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; não é observação oficial INMET)",
         "latitude": -15.56,
         "longitude": -54.3,
-        "avisos": [
-          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
-        ]
+        "avisos": []
       }
     ]
   },
@@ -153,7 +151,7 @@
     }
   ],
   "status": {
-    "ultima_execucao": "2026-10-26 19:10 UTC",
+    "ultima_execucao": "2026-10-26 19:28 UTC",
     "meteorologia": "OK",
     "plantio": "Parcialmente integrado: percentual estadual e 3 regiões divulgadas; demais regiões aguardam confirmação",
     "avisos": [
