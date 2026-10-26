@@ -112,7 +112,7 @@
       {
         "regiao": "Noroeste · Juína",
         "chuva_observada_7d_mm": 24.3,
-        "previsao_7d_mm": 49,
+        "previsao_7d_mm": 49.0,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; não é observação oficial INMET)",
         "latitude": -11.42,
@@ -131,7 +131,7 @@
       },
       {
         "regiao": "Sudeste · Primavera do Leste",
-        "chuva_observada_7d_mm": 2,
+        "chuva_observada_7d_mm": 2.0,
         "previsao_7d_mm": 69.8,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; não é observação oficial INMET)",
@@ -151,7 +151,7 @@
     }
   ],
   "status": {
-    "ultima_execucao": "2026-10-26 21:10 UTC",
+    "ultima_execucao": "2026-10-26 21:14 UTC",
     "meteorologia": "OK",
     "plantio": "Parcialmente integrado: percentual estadual e 3 regiões divulgadas; demais regiões aguardam confirmação",
     "avisos": [
@@ -884,378 +884,378 @@
         "uf": "AC",
         "estado": "Acre",
         "regiao": "Acre",
-        "chuva_observada_7d_mm": null,
-        "previsao_7d_mm": 60.2,
+        "chuva_observada_7d_mm": 29.7,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -9.02,
         "longitude": -70.81,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
         ]
       },
       {
         "uf": "AL",
         "estado": "Alagoas",
         "regiao": "Alagoas",
-        "chuva_observada_7d_mm": null,
-        "previsao_7d_mm": 1.9,
+        "chuva_observada_7d_mm": 5.9,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -9.57,
         "longitude": -36.78,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
         ]
       },
       {
         "uf": "AP",
         "estado": "Amapá",
         "regiao": "Amapá",
-        "chuva_observada_7d_mm": null,
-        "previsao_7d_mm": 1.6,
+        "chuva_observada_7d_mm": 2.0,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": 1.41,
         "longitude": -51.77,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
         ]
       },
       {
         "uf": "AM",
         "estado": "Amazonas",
         "regiao": "Amazonas",
-        "chuva_observada_7d_mm": null,
-        "previsao_7d_mm": 36.8,
+        "chuva_observada_7d_mm": 9.1,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -3.47,
         "longitude": -65.1,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
         ]
       },
       {
         "uf": "BA",
         "estado": "Bahia",
         "regiao": "Bahia",
-        "chuva_observada_7d_mm": null,
-        "previsao_7d_mm": 26,
+        "chuva_observada_7d_mm": 3.9,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -12.58,
         "longitude": -41.7,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
         ]
       },
       {
         "uf": "CE",
         "estado": "Ceará",
         "regiao": "Ceará",
-        "chuva_observada_7d_mm": null,
-        "previsao_7d_mm": 0.7,
+        "chuva_observada_7d_mm": 0.1,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -5.2,
         "longitude": -39.53,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
         ]
       },
       {
         "uf": "DF",
         "estado": "Distrito Federal",
         "regiao": "Distrito Federal",
-        "chuva_observada_7d_mm": null,
-        "previsao_7d_mm": 97.1,
+        "chuva_observada_7d_mm": 21.2,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -15.8,
         "longitude": -47.88,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
         ]
       },
       {
         "uf": "ES",
         "estado": "Espírito Santo",
         "regiao": "Espírito Santo",
-        "chuva_observada_7d_mm": null,
-        "previsao_7d_mm": 76.2,
+        "chuva_observada_7d_mm": 35.1,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -19.57,
         "longitude": -40.54,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
         ]
       },
       {
         "uf": "GO",
         "estado": "Goiás",
         "regiao": "Goiás",
-        "chuva_observada_7d_mm": null,
-        "previsao_7d_mm": 55.2,
+        "chuva_observada_7d_mm": 15.6,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -15.93,
         "longitude": -49.25,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
         ]
       },
       {
         "uf": "MA",
         "estado": "Maranhão",
         "regiao": "Maranhão",
-        "chuva_observada_7d_mm": null,
-        "previsao_7d_mm": 13.3,
+        "chuva_observada_7d_mm": 13.0,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -5.42,
         "longitude": -45.44,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
         ]
       },
       {
         "uf": "MT",
         "estado": "Mato Grosso",
         "regiao": "Mato Grosso",
-        "chuva_observada_7d_mm": null,
-        "previsao_7d_mm": 49.8,
+        "chuva_observada_7d_mm": 11.5,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -12.64,
         "longitude": -55.42,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
         ]
       },
       {
         "uf": "MS",
         "estado": "Mato Grosso do Sul",
         "regiao": "Mato Grosso do Sul",
-        "chuva_observada_7d_mm": null,
-        "previsao_7d_mm": 30.2,
+        "chuva_observada_7d_mm": 11.9,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -20.77,
         "longitude": -54.78,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
         ]
       },
       {
         "uf": "MG",
         "estado": "Minas Gerais",
         "regiao": "Minas Gerais",
-        "chuva_observada_7d_mm": null,
-        "previsao_7d_mm": 69,
+        "chuva_observada_7d_mm": 20.2,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -18.51,
         "longitude": -44.55,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
         ]
       },
       {
         "uf": "PA",
         "estado": "Pará",
         "regiao": "Pará",
-        "chuva_observada_7d_mm": null,
-        "previsao_7d_mm": 3.6,
+        "chuva_observada_7d_mm": 6.0,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -3.79,
         "longitude": -52.48,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
         ]
       },
       {
         "uf": "PB",
         "estado": "Paraíba",
         "regiao": "Paraíba",
-        "chuva_observada_7d_mm": null,
-        "previsao_7d_mm": 0.4,
+        "chuva_observada_7d_mm": 1.7,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -7.12,
         "longitude": -36.72,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
         ]
       },
       {
         "uf": "PR",
         "estado": "Paraná",
         "regiao": "Paraná",
-        "chuva_observada_7d_mm": null,
-        "previsao_7d_mm": 17.7,
+        "chuva_observada_7d_mm": 131.6,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -24.89,
         "longitude": -51.55,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
         ]
       },
       {
         "uf": "PE",
         "estado": "Pernambuco",
         "regiao": "Pernambuco",
-        "chuva_observada_7d_mm": null,
-        "previsao_7d_mm": 0.2,
+        "chuva_observada_7d_mm": 1.0,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -8.38,
         "longitude": -37.86,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
         ]
       },
       {
         "uf": "PI",
         "estado": "Piauí",
         "regiao": "Piauí",
-        "chuva_observada_7d_mm": null,
-        "previsao_7d_mm": 15,
+        "chuva_observada_7d_mm": 1.4,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -7.72,
         "longitude": -42.73,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
         ]
       },
       {
         "uf": "RJ",
         "estado": "Rio de Janeiro",
         "regiao": "Rio de Janeiro",
-        "chuva_observada_7d_mm": null,
-        "previsao_7d_mm": 105.2,
+        "chuva_observada_7d_mm": 40.0,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -22.25,
         "longitude": -42.66,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
         ]
       },
       {
         "uf": "RN",
         "estado": "Rio Grande do Norte",
         "regiao": "Rio Grande do Norte",
-        "chuva_observada_7d_mm": null,
-        "previsao_7d_mm": 0.1,
+        "chuva_observada_7d_mm": 2.8,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -5.81,
         "longitude": -36.59,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
         ]
       },
       {
         "uf": "RS",
         "estado": "Rio Grande do Sul",
         "regiao": "Rio Grande do Sul",
-        "chuva_observada_7d_mm": null,
-        "previsao_7d_mm": 2.4,
+        "chuva_observada_7d_mm": 30.5,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -30.03,
         "longitude": -53.2,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
         ]
       },
       {
         "uf": "RO",
         "estado": "Rondônia",
         "regiao": "Rondônia",
-        "chuva_observada_7d_mm": null,
-        "previsao_7d_mm": 58.7,
+        "chuva_observada_7d_mm": 30.3,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -10.83,
         "longitude": -63.34,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
         ]
       },
       {
         "uf": "RR",
         "estado": "Roraima",
         "regiao": "Roraima",
-        "chuva_observada_7d_mm": null,
-        "previsao_7d_mm": 12.6,
+        "chuva_observada_7d_mm": 26.4,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": 2.05,
         "longitude": -61.4,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
         ]
       },
       {
         "uf": "SC",
         "estado": "Santa Catarina",
         "regiao": "Santa Catarina",
-        "chuva_observada_7d_mm": null,
-        "previsao_7d_mm": 44.9,
+        "chuva_observada_7d_mm": 88.2,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -27.24,
         "longitude": -50.22,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
         ]
       },
       {
         "uf": "SP",
         "estado": "São Paulo",
         "regiao": "São Paulo",
-        "chuva_observada_7d_mm": null,
-        "previsao_7d_mm": 41,
+        "chuva_observada_7d_mm": 67.0,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -22.19,
         "longitude": -48.79,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
         ]
       },
       {
         "uf": "SE",
         "estado": "Sergipe",
         "regiao": "Sergipe",
-        "chuva_observada_7d_mm": null,
-        "previsao_7d_mm": 3.4,
+        "chuva_observada_7d_mm": 5.4,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -10.57,
         "longitude": -37.45,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
         ]
       },
       {
         "uf": "TO",
         "estado": "Tocantins",
         "regiao": "Tocantins",
-        "chuva_observada_7d_mm": null,
-        "previsao_7d_mm": 46.2,
+        "chuva_observada_7d_mm": 19.7,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -10.25,
         "longitude": -48.25,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
         ]
       }
     ]
