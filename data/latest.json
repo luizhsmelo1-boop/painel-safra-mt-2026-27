@@ -112,7 +112,7 @@
       {
         "regiao": "Noroeste · Juína",
         "chuva_observada_7d_mm": 24.3,
-        "previsao_7d_mm": 49.0,
+        "previsao_7d_mm": 49,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; não é observação oficial INMET)",
         "latitude": -11.42,
@@ -131,7 +131,7 @@
       },
       {
         "regiao": "Sudeste · Primavera do Leste",
-        "chuva_observada_7d_mm": 2.0,
+        "chuva_observada_7d_mm": 2,
         "previsao_7d_mm": 69.8,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; não é observação oficial INMET)",
@@ -893,7 +893,7 @@
         "uf": "AP",
         "estado": "Amapá",
         "regiao": "Amapá",
-        "chuva_observada_7d_mm": 2.0,
+        "chuva_observada_7d_mm": 2,
         "previsao_7d_mm": 1.6,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
@@ -918,7 +918,7 @@
         "estado": "Bahia",
         "regiao": "Bahia",
         "chuva_observada_7d_mm": 3.9,
-        "previsao_7d_mm": 26.0,
+        "previsao_7d_mm": 26,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -12.58,
@@ -977,7 +977,7 @@
         "uf": "MA",
         "estado": "Maranhão",
         "regiao": "Maranhão",
-        "chuva_observada_7d_mm": 13.0,
+        "chuva_observada_7d_mm": 13,
         "previsao_7d_mm": 13.3,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
@@ -1014,7 +1014,7 @@
         "estado": "Minas Gerais",
         "regiao": "Minas Gerais",
         "chuva_observada_7d_mm": 20.2,
-        "previsao_7d_mm": 69.0,
+        "previsao_7d_mm": 69,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -18.51,
@@ -1025,7 +1025,7 @@
         "uf": "PA",
         "estado": "Pará",
         "regiao": "Pará",
-        "chuva_observada_7d_mm": 6.0,
+        "chuva_observada_7d_mm": 6,
         "previsao_7d_mm": 3.6,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
@@ -1061,7 +1061,7 @@
         "uf": "PE",
         "estado": "Pernambuco",
         "regiao": "Pernambuco",
-        "chuva_observada_7d_mm": 1.0,
+        "chuva_observada_7d_mm": 1,
         "previsao_7d_mm": 0.2,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
@@ -1074,7 +1074,7 @@
         "estado": "Piauí",
         "regiao": "Piauí",
         "chuva_observada_7d_mm": 1.4,
-        "previsao_7d_mm": 15.0,
+        "previsao_7d_mm": 15,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -7.72,
@@ -1085,7 +1085,7 @@
         "uf": "RJ",
         "estado": "Rio de Janeiro",
         "regiao": "Rio de Janeiro",
-        "chuva_observada_7d_mm": 40.0,
+        "chuva_observada_7d_mm": 40,
         "previsao_7d_mm": 105.2,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
@@ -1157,8 +1157,8 @@
         "uf": "SP",
         "estado": "São Paulo",
         "regiao": "São Paulo",
-        "chuva_observada_7d_mm": 67.0,
-        "previsao_7d_mm": 41.0,
+        "chuva_observada_7d_mm": 67,
+        "previsao_7d_mm": 41,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -22.19,
@@ -1190,5 +1190,30 @@
         "avisos": []
       }
     ]
-  }
+  },
+  "plantio_regional_estados": [
+    {
+      "uf": "MS",
+      "estado": "Mato Grosso do Sul",
+      "nivel_regional": "regiões SIGA-MS",
+      "data_referencia": "2026-10-21",
+      "fonte": "Aprosoja/MS — Projeto SIGA-MS",
+      "fonte_url": "https://aprosojams.org.br/blog/chuva-atrasa-avanco-do-plantio-da-soja-em-mato-grosso-do-sul",
+      "regioes": [
+        {
+          "name": "Sul",
+          "plantio_pct": 39.7
+        },
+        {
+          "name": "Centro",
+          "plantio_pct": 21
+        },
+        {
+          "name": "Norte",
+          "plantio_pct": 18.7
+        }
+      ],
+      "nota": "Percentuais de plantio em cada região, conforme levantamento publicado em 21/10/2026. A fonte não informa hectares totais por região neste boletim."
+    }
+  ]
 }
