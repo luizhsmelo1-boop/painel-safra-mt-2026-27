@@ -27,7 +27,14 @@
 <p class="muted" id="nationalNote"></p>
 <p class="links"><a id="nationalSource" href="https://www.gov.br/conab/pt-br/atuacao/informacoes-agropecuarias/safras/progresso-de-safra" target="_blank" rel="noopener">Conab · Progresso de Safra</a></p>
 </section>
-<div class="two" id="mtRegionalDetails"><section class="card"><h2 id="regionalMapTitle">Mapa do Brasil por estado</h2><div id="mapBrazilFocus" style="height:390px;border-radius:10px;border:1px solid var(--line);margin-bottom:14px"></div><p class="muted">Clique em um estado no mapa para destacar seus indicadores ao lado.</p><div id="map" style="display:none"></div></section><section class="card"><h2>Plantio por macrorregião</h2><div class="muted" id="regionDate">Aguardando dados verificados do IMEA.</div><div id="regions"></div><div class="notice muted">Percentual de plantio não mede umidade do solo. Combine dados com chuva observada, previsão e condições locais.</div></section></div>
+<div class="two" id="mtRegionalDetails"><section class="card"><h2 id="regionalMapTitle">Mapa do Brasil por estado</h2><div id="mapBrazilFocus" style="height:390px;border-radius:10px;border:1px solid var(--line);margin-bottom:14px"></div><p class="muted">Clique em um estado no mapa para destacar seus indicadores ao lado.</p><div id="map" style="display:none"></div></section><section class="card"><h2 id="regionPanelTitle">Plantio por microrregião</h2><div class="muted" id="regionDate">Aguardando dados verificados do IMEA.</div><div id="regions"></div><div class="card" style="margin-top:12px;background:#f3f7f4">
+<div class="label" id="avgPriceTitle">Média negociada por saca — Brasil</div>
+<div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:8px">
+<div><div class="label">Soja · saca 60 kg</div><div class="value" id="avgSoyPrice">—</div><div class="muted" id="avgSoyMeta">Preço referencial</div></div>
+<div><div class="label">Milho · saca 60 kg</div><div class="value" id="avgCornPrice">—</div><div class="muted" id="avgCornMeta">Preço referencial</div></div>
+</div>
+<div class="muted" id="avgPriceNote" style="margin-top:8px">Média simples das cotações cadastradas; não representa necessariamente preço efetivamente fechado.</div>
+</div></section></div>
 <section class="card" id="pricesSection">
 <h2>Preços dos grãos por estado e cidade</h2>
 <p class="muted" id="pricesMeta">Carregando cotações…</p>
@@ -61,7 +68,17 @@ function selectState(uf){
  const pr=prices.filter(x=>x.produto==='Soja'&&(!s||x.uf===uf)).sort((a,b)=>new Date(b.data)-new Date(a.data))[0];
  document.getElementById('kpiPrice').textContent=pr?Number(pr.preco).toLocaleString('pt-BR',{style:'currency',currency:'BRL'}):'Sem dado';
  document.getElementById('kpiPriceNote').textContent=pr?pr.cidade+' · '+pr.unidade+' · '+dateBR(pr.data):'Não há cotação cadastrada para esta seleção';
- document.getElementById('stateDetailsNote').textContent=s?'Estado: '+s.estado+'. Clique em outro estado no mapa ou use o menu para trocar a seleção.':'Visão Brasil: o avanço agregado considera os 12 estados monitorados; chuva e preços variam por localidade e são mostrados apenas quando há dado cadastrado.'; document.getElementById('mtRegionalDetails').style.display='grid'; document.getElementById('regions').parentElement.style.display=mt?'block':'none'; document.getElementById('mtWeatherDetails').style.display=mt?'block':'none'; document.getElementById('regionalMapTitle').textContent=s?'Mapa regional — '+s.estado:'Mapa do Brasil por estado'; document.getElementById('kpiPlantioLabel').textContent='Plantio de soja — '+title;
+ document.getElementById('stateDetailsNote').textContent=s?'Estado: '+s.estado+'. Clique em outro estado no mapa ou use o menu para trocar a seleção.':'Visão Brasil: o avanço agregado considera os 12 estados monitorados; chuva e preços variam por localidade e são mostrados apenas quando há dado cadastrado.';
+ const avgFor=product=>{const arr=prices.filter(x=>x.produto===product&&x.unidade==='R$/saca 60 kg'&&(!s||x.uf===uf)&&Number.isFinite(Number(x.preco)));return {avg:arr.length?arr.reduce((a,x)=>a+Number(x.preco),0)/arr.length:null,count:arr.length,dates:[...new Set(arr.map(x=>x.data))].sort().reverse()};};
+ const soy=avgFor('Soja'),corn=avgFor('Milho');
+ const brl=n=>n==null?'Sem cotação':Number(n).toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:2});
+ document.getElementById('avgPriceTitle').textContent='Média negociada por saca — '+title;
+ document.getElementById('avgSoyPrice').textContent=brl(soy.avg);document.getElementById('avgCornPrice').textContent=brl(corn.avg);
+ document.getElementById('avgSoyMeta').textContent=soy.count+' praça(s) · saca 60 kg';
+ document.getElementById('avgCornMeta').textContent=corn.count+' praça(s) · saca 60 kg';
+ document.getElementById('avgPriceNote').textContent='Média simples das cotações cadastradas'+(s?' em '+s.estado:' nos estados com dados')+'. Não representa necessariamente preço efetivamente fechado. Algodão não entra na média por usar outra unidade.';
+ document.getElementById('regionPanelTitle').textContent=mt?'Plantio por microrregião — Mato Grosso':'Plantio por microrregião';
+ document.getElementById('mtRegionalDetails').style.display='grid'; document.getElementById('regions').parentElement.style.display=mt?'block':'none'; document.getElementById('mtWeatherDetails').style.display=mt?'block':'none'; document.getElementById('regionalMapTitle').textContent=s?'Mapa regional — '+s.estado:'Mapa do Brasil por estado'; document.getElementById('kpiPlantioLabel').textContent='Plantio de soja — '+title;
 }
 function renderNational(data){
  const states=data.estados||[];
