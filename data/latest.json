@@ -112,7 +112,7 @@
       {
         "regiao": "Noroeste · Juína",
         "chuva_observada_7d_mm": 24.3,
-        "previsao_7d_mm": 49.0,
+        "previsao_7d_mm": 49,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; não é observação oficial INMET)",
         "latitude": -11.42,
@@ -131,7 +131,7 @@
       },
       {
         "regiao": "Sudeste · Primavera do Leste",
-        "chuva_observada_7d_mm": 2.0,
+        "chuva_observada_7d_mm": 2,
         "previsao_7d_mm": null,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; não é observação oficial INMET)",
@@ -162,5 +162,102 @@
       "Fonte secundária que reporta números do IMEA; integração automática do boletim oficial ainda pendente.",
       "Chuva observada estimada por arquivo/reanálise Open-Meteo, não medição oficial INMET."
     ]
+  },
+  "plantio_nacional": {
+    "cultura": "Soja",
+    "safra": "2026/27",
+    "data_referencia": "2026-10-18",
+    "abrangencia": "12 estados monitorados pela Conab (aprox. 95% da área brasileira de soja)",
+    "plantio_pct": 30.1,
+    "avanco_semanal_pp": 14.5,
+    "fonte": "Conab — Progresso de Safra; percentuais estaduais reportados a partir do acompanhamento semanal",
+    "fonte_url": "https://www.gov.br/conab/pt-br/atuacao/informacoes-agropecuarias/safras/progresso-de-safra",
+    "estados": [
+      {
+        "uf": "MT",
+        "estado": "Mato Grosso",
+        "pct": 60.8,
+        "lat": -12.64,
+        "lon": -55.42
+      },
+      {
+        "uf": "PR",
+        "estado": "Paraná",
+        "pct": 39,
+        "lat": -24.89,
+        "lon": -51.55
+      },
+      {
+        "uf": "SP",
+        "estado": "São Paulo",
+        "pct": 35,
+        "lat": -22.19,
+        "lon": -48.79
+      },
+      {
+        "uf": "MS",
+        "estado": "Mato Grosso do Sul",
+        "pct": 28,
+        "lat": -20.77,
+        "lon": -54.78
+      },
+      {
+        "uf": "GO",
+        "estado": "Goiás",
+        "pct": 26,
+        "lat": -15.93,
+        "lon": -49.25
+      },
+      {
+        "uf": "BA",
+        "estado": "Bahia",
+        "pct": 14,
+        "lat": -12.58,
+        "lon": -41.7
+      },
+      {
+        "uf": "MG",
+        "estado": "Minas Gerais",
+        "pct": 11.2,
+        "lat": -18.51,
+        "lon": -44.55
+      },
+      {
+        "uf": "SC",
+        "estado": "Santa Catarina",
+        "pct": 10.9,
+        "lat": -27.24,
+        "lon": -50.22
+      },
+      {
+        "uf": "RS",
+        "estado": "Rio Grande do Sul",
+        "pct": 1,
+        "lat": -30.03,
+        "lon": -53.2
+      },
+      {
+        "uf": "TO",
+        "estado": "Tocantins",
+        "pct": 0,
+        "lat": -10.25,
+        "lon": -48.25
+      },
+      {
+        "uf": "MA",
+        "estado": "Maranhão",
+        "pct": 0,
+        "lat": -5.42,
+        "lon": -45.44
+      },
+      {
+        "uf": "PI",
+        "estado": "Piauí",
+        "pct": 0,
+        "lat": -7.72,
+        "lon": -42.73
+      }
+    ],
+    "nota": "Percentuais estaduais referentes ao acompanhamento até 18/10/2026. A média de 30,1% e o avanço semanal de 14,5 p.p. referem-se ao conjunto de 12 estados, não a todos os 26 estados e DF. Dados compilados a partir de divulgação que atribui os números à Conab; conferir o boletim oficial vinculado."
   }
 }
