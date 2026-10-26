@@ -66,9 +66,82 @@
     ]
   },
   "meteorologia": {
-    "atualizado_em": null,
-    "observacao": "Aguardando primeira execução do coletor Open-Meteo.",
-    "regioes": []
+    "atualizado_em": "2026-10-26",
+    "observacao": "Precipitação recente estimada por arquivo/reanálise e previsão por modelo Open-Meteo. Não é medição oficial INMET e ponto não representa toda a macrorregião.",
+    "regioes": [
+      {
+        "regiao": "Médio-Norte · Sorriso",
+        "chuva_observada_7d_mm": 12.3,
+        "previsao_7d_mm": 57.4,
+        "atualizado_em": "2026-10-26",
+        "fonte": "Open-Meteo (arquivo/reanálise e modelo; não é observação oficial INMET)",
+        "latitude": -12.54,
+        "longitude": -55.72,
+        "avisos": []
+      },
+      {
+        "regiao": "Oeste · Campo Novo do Parecis",
+        "chuva_observada_7d_mm": 6.8,
+        "previsao_7d_mm": 58.6,
+        "atualizado_em": "2026-10-26",
+        "fonte": "Open-Meteo (arquivo/reanálise e modelo; não é observação oficial INMET)",
+        "latitude": -13.66,
+        "longitude": -57.89,
+        "avisos": []
+      },
+      {
+        "regiao": "Norte · Sinop",
+        "chuva_observada_7d_mm": 12.7,
+        "previsao_7d_mm": 52.3,
+        "atualizado_em": "2026-10-26",
+        "fonte": "Open-Meteo (arquivo/reanálise e modelo; não é observação oficial INMET)",
+        "latitude": -11.86,
+        "longitude": -55.51,
+        "avisos": []
+      },
+      {
+        "regiao": "Centro-Sul · Cuiabá",
+        "chuva_observada_7d_mm": 4.1,
+        "previsao_7d_mm": 38.1,
+        "atualizado_em": "2026-10-26",
+        "fonte": "Open-Meteo (arquivo/reanálise e modelo; não é observação oficial INMET)",
+        "latitude": -15.6,
+        "longitude": -56.1,
+        "avisos": []
+      },
+      {
+        "regiao": "Noroeste · Juína",
+        "chuva_observada_7d_mm": 24.3,
+        "previsao_7d_mm": 49.0,
+        "atualizado_em": "2026-10-26",
+        "fonte": "Open-Meteo (arquivo/reanálise e modelo; não é observação oficial INMET)",
+        "latitude": -11.42,
+        "longitude": -58.76,
+        "avisos": []
+      },
+      {
+        "regiao": "Nordeste · Canarana",
+        "chuva_observada_7d_mm": 13.9,
+        "previsao_7d_mm": 66.4,
+        "atualizado_em": "2026-10-26",
+        "fonte": "Open-Meteo (arquivo/reanálise e modelo; não é observação oficial INMET)",
+        "latitude": -13.55,
+        "longitude": -52.27,
+        "avisos": []
+      },
+      {
+        "regiao": "Sudeste · Primavera do Leste",
+        "chuva_observada_7d_mm": 2.0,
+        "previsao_7d_mm": null,
+        "atualizado_em": "2026-10-26",
+        "fonte": "Open-Meteo (arquivo/reanálise e modelo; não é observação oficial INMET)",
+        "latitude": -15.56,
+        "longitude": -54.3,
+        "avisos": [
+          "previsão: <urlopen error _ssl.c:993: The handshake operation timed out>"
+        ]
+      }
+    ]
   },
   "historico_plantio": [
     {
@@ -80,8 +153,8 @@
     }
   ],
   "status": {
-    "ultima_execucao": "Plantio atualizado com boletim de 23/10/2026",
-    "meteorologia": "Pendente da primeira execução",
+    "ultima_execucao": "2026-10-26 19:10 UTC",
+    "meteorologia": "OK",
     "plantio": "Parcialmente integrado: percentual estadual e 3 regiões divulgadas; demais regiões aguardam confirmação",
     "avisos": [
       "Dados de plantio referem-se a 23/10/2026 e não são tempo real.",
