@@ -112,7 +112,7 @@
       {
         "regiao": "Noroeste · Juína",
         "chuva_observada_7d_mm": 24.3,
-        "previsao_7d_mm": 49,
+        "previsao_7d_mm": 49.0,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; não é observação oficial INMET)",
         "latitude": -11.42,
@@ -131,13 +131,15 @@
       },
       {
         "regiao": "Sudeste · Primavera do Leste",
-        "chuva_observada_7d_mm": 2,
+        "chuva_observada_7d_mm": null,
         "previsao_7d_mm": 69.8,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; não é observação oficial INMET)",
         "latitude": -15.56,
         "longitude": -54.3,
-        "avisos": []
+        "avisos": [
+          "arquivo: <urlopen error _ssl.c:993: The handshake operation timed out>"
+        ]
       }
     ]
   },
@@ -151,7 +153,7 @@
     }
   ],
   "status": {
-    "ultima_execucao": "2026-10-26 20:45 UTC",
+    "ultima_execucao": "2026-10-26 20:57 UTC",
     "meteorologia": "OK",
     "plantio": "Parcialmente integrado: percentual estadual e 3 regiões divulgadas; demais regiões aguardam confirmação",
     "avisos": [
@@ -893,7 +895,7 @@
         "uf": "AP",
         "estado": "Amapá",
         "regiao": "Amapá",
-        "chuva_observada_7d_mm": 2,
+        "chuva_observada_7d_mm": 2.0,
         "previsao_7d_mm": 1.6,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
@@ -918,7 +920,7 @@
         "estado": "Bahia",
         "regiao": "Bahia",
         "chuva_observada_7d_mm": 3.9,
-        "previsao_7d_mm": 26,
+        "previsao_7d_mm": 26.0,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -12.58,
@@ -977,7 +979,7 @@
         "uf": "MA",
         "estado": "Maranhão",
         "regiao": "Maranhão",
-        "chuva_observada_7d_mm": 13,
+        "chuva_observada_7d_mm": 13.0,
         "previsao_7d_mm": 13.3,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
@@ -1014,7 +1016,7 @@
         "estado": "Minas Gerais",
         "regiao": "Minas Gerais",
         "chuva_observada_7d_mm": 20.2,
-        "previsao_7d_mm": 69,
+        "previsao_7d_mm": 69.0,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -18.51,
@@ -1025,7 +1027,7 @@
         "uf": "PA",
         "estado": "Pará",
         "regiao": "Pará",
-        "chuva_observada_7d_mm": 6,
+        "chuva_observada_7d_mm": 6.0,
         "previsao_7d_mm": 3.6,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
@@ -1061,7 +1063,7 @@
         "uf": "PE",
         "estado": "Pernambuco",
         "regiao": "Pernambuco",
-        "chuva_observada_7d_mm": 1,
+        "chuva_observada_7d_mm": 1.0,
         "previsao_7d_mm": 0.2,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
@@ -1074,7 +1076,7 @@
         "estado": "Piauí",
         "regiao": "Piauí",
         "chuva_observada_7d_mm": 1.4,
-        "previsao_7d_mm": 15,
+        "previsao_7d_mm": 15.0,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -7.72,
@@ -1085,7 +1087,7 @@
         "uf": "RJ",
         "estado": "Rio de Janeiro",
         "regiao": "Rio de Janeiro",
-        "chuva_observada_7d_mm": 40,
+        "chuva_observada_7d_mm": 40.0,
         "previsao_7d_mm": 105.2,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
@@ -1157,8 +1159,8 @@
         "uf": "SP",
         "estado": "São Paulo",
         "regiao": "São Paulo",
-        "chuva_observada_7d_mm": 67,
-        "previsao_7d_mm": 41,
+        "chuva_observada_7d_mm": 67.0,
+        "previsao_7d_mm": 41.0,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -22.19,
