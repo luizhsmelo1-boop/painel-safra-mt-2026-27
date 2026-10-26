@@ -1,26 +1,27 @@
 {
   "plantio": {
-    "data_referencia": null,
-    "plantio_pct": null,
-    "avanco_semanal_pp": null,
-    "area_mi_ha": null,
-    "fonte": "Aguardando validação do boletim oficial do IMEA",
+    "data_referencia": "2026-10-23",
+    "plantio_pct": 75.81,
+    "avanco_semanal_pp": 23.95,
+    "area_mi_ha": 13.08,
+    "fonte": "IMEA, conforme boletim reportado pelo Canal Rural em 23/10/2026",
+    "fonte_url": "https://www.canalrural.com.br/agricultura/projeto-soja-brasil/plantio-de-soja-em-mt-pode-superar-80-ate-fim-de-outubro-dados-sao-do-imea/",
     "regioes": [
       {
         "name": "Médio-Norte",
         "city": "Sorriso",
         "lat": -12.54,
         "lon": -55.72,
-        "plantio_pct": null,
-        "date": null
+        "plantio_pct": 96.6,
+        "date": "2026-10-23"
       },
       {
         "name": "Oeste",
         "city": "Campo Novo do Parecis",
         "lat": -13.66,
         "lon": -57.89,
-        "plantio_pct": null,
-        "date": null
+        "plantio_pct": 86.78,
+        "date": "2026-10-23"
       },
       {
         "name": "Norte",
@@ -28,7 +29,7 @@
         "lat": -11.86,
         "lon": -55.51,
         "plantio_pct": null,
-        "date": null
+        "date": "2026-10-23"
       },
       {
         "name": "Centro-Sul",
@@ -36,7 +37,7 @@
         "lat": -15.6,
         "lon": -56.1,
         "plantio_pct": null,
-        "date": null
+        "date": "2026-10-23"
       },
       {
         "name": "Noroeste",
@@ -44,7 +45,7 @@
         "lat": -11.42,
         "lon": -58.76,
         "plantio_pct": null,
-        "date": null
+        "date": "2026-10-23"
       },
       {
         "name": "Nordeste",
@@ -52,15 +53,15 @@
         "lat": -13.55,
         "lon": -52.27,
         "plantio_pct": null,
-        "date": null
+        "date": "2026-10-23"
       },
       {
         "name": "Sudeste",
         "city": "Primavera do Leste",
         "lat": -15.56,
         "lon": -54.3,
-        "plantio_pct": null,
-        "date": null
+        "plantio_pct": 59.04,
+        "date": "2026-10-23"
       }
     ]
   },
@@ -69,14 +70,24 @@
     "observacao": "Aguardando primeira execução do coletor Open-Meteo.",
     "regioes": []
   },
-  "historico_plantio": [],
+  "historico_plantio": [
+    {
+      "data_referencia": "2026-10-23",
+      "plantio_pct": 75.81,
+      "avanco_semanal_pp": 23.95,
+      "fonte": "IMEA, conforme boletim reportado pelo Canal Rural",
+      "fonte_url": "https://www.canalrural.com.br/agricultura/projeto-soja-brasil/plantio-de-soja-em-mt-pode-superar-80-ate-fim-de-outubro-dados-sao-do-imea/"
+    }
+  ],
   "status": {
-    "ultima_execucao": "Painel inicializado; primeira execução automática pendente",
+    "ultima_execucao": "Plantio atualizado com boletim de 23/10/2026",
     "meteorologia": "Pendente da primeira execução",
-    "plantio": "Pendente de validação manual com boletim oficial do IMEA",
+    "plantio": "Parcialmente integrado: percentual estadual e 3 regiões divulgadas; demais regiões aguardam confirmação",
     "avisos": [
-      "Indicadores de plantio estão em branco para evitar divulgar valores não verificados.",
-      "A chuva observada usa dados de arquivo/reanálise Open-Meteo; não equivale a medição oficial INMET."
+      "Dados de plantio referem-se a 23/10/2026 e não são tempo real.",
+      "Dados regionais em branco não foram divulgados na fonte consultada; não representam zero.",
+      "Fonte secundária que reporta números do IMEA; integração automática do boletim oficial ainda pendente.",
+      "Chuva observada estimada por arquivo/reanálise Open-Meteo, não medição oficial INMET."
     ]
   }
 }
