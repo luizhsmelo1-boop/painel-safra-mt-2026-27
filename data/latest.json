@@ -1214,6 +1214,22 @@
         }
       ],
       "nota": "Percentuais de plantio em cada região, conforme levantamento publicado em 21/10/2026. A fonte não informa hectares totais por região neste boletim."
+    },
+    {
+      "uf": "RS",
+      "estado": "Rio Grande do Sul",
+      "nivel_regional": "região de acompanhamento Emater/RS-Ascar",
+      "data_referencia": "2026-10-15",
+      "fonte": "Emater/RS-Ascar / Secretaria da Agricultura do RS",
+      "fonte_url": "https://www.agricultura.rs.gov.br/semeadura-da-soja-no-rio-grande-do-sul-segue-limitada-em-razao-das-chuvas",
+      "regioes": [
+        {
+          "name": "Santa Rosa",
+          "plantio_pct": 6,
+          "area_ha": 786234
+        }
+      ],
+      "nota": "A fonte informa 6% semeado sobre área projetada de 786.234 ha para a região de Santa Rosa. Este dado regional não representa todo o estado."
     }
   ]
 }
