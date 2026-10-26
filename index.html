@@ -12,6 +12,11 @@
 <div class="card"><div class="label">Chuva últimos 7 dias</div><div class="value" id="kpiRain">—</div><div class="muted" id="kpiRainNote">Estimativa/modelo por localidade</div></div>
 <div class="card"><div class="label">Preço da soja</div><div class="value" id="kpiPrice">—</div><div class="muted" id="kpiPriceNote">Preço referencial por praça</div></div>
 </div>
+<div class="grid" style="margin-top:12px">
+<div class="card"><div class="label">Área total prevista</div><div class="value" id="kpiAreaTotal">—</div><div class="muted">Hectares de soja na safra 2026/27</div></div>
+<div class="card"><div class="label">Área já plantada</div><div class="value" id="kpiAreaPlanted">—</div><div class="muted" id="kpiAreaPlantedNote">Calculada a partir do percentual</div></div>
+<div class="card"><div class="label">Falta plantar</div><div class="value" id="kpiAreaRemaining">—</div><div class="muted" id="kpiAreaRemainingNote">Área prevista menos área plantada</div></div>
+</div>
 <div id="stateDetailsNote" class="muted" style="margin-top:12px"></div>
 </section>
 <div id="legacyMtKpis" style="display:none!important" class="grid"><div class="card"><div class="label">Plantio estadual — Mato Grosso (IMEA)</div><div class="value" id="plantio">—</div><div class="muted" id="plantioDate">Aguardando boletim validado</div><div class="bar"><span id="plantioBar" style="width:0%"></span></div></div><div class="card"><div class="label">Avanço semanal</div><div class="value" id="weekly">—</div><div class="muted">Pontos percentuais</div></div><div class="card"><div class="label">Área prevista</div><div class="value" id="area">—</div><div class="muted">Milhões de hectares</div></div><div class="card"><div class="label">Área a plantar</div><div class="value" id="remaining">—</div><div class="muted" id="remainingHa">—</div></div></div>
@@ -23,9 +28,9 @@
 <div><div class="label">Avanço semanal</div><div class="value" id="nationalWeekly">—</div></div>
 </div>
 <div id="mapNational" style="height:390px;border-radius:10px;border:1px solid var(--line);margin-bottom:14px"></div>
-<div style="overflow-x:auto"><table><thead><tr><th>UF</th><th>Estado</th><th>Plantio</th><th>Progresso</th></tr></thead><tbody id="nationalRows"><tr><td colspan="4">Carregando…</td></tr></tbody></table></div>
-<p class="muted" id="nationalNote"></p>
-<p class="links"><a id="nationalSource" href="https://www.gov.br/conab/pt-br/atuacao/informacoes-agropecuarias/safras/progresso-de-safra" target="_blank" rel="noopener">Conab · Progresso de Safra</a></p>
+<div style="overflow-x:auto"><table><thead><tr><th>UF</th><th>Estado</th><th>Plantio (%)</th><th>Progresso</th><th>Área total (ha)</th><th>Plantado (ha)</th><th>Falta plantar (ha)</th><th>Chuva 7 dias (mm)</th></tr></thead><tbody id="nationalRows"><tr><td colspan="4">Carregando…</td></tr></tbody></table></div>
+<p class="muted" id="nationalNote"></p><p class="muted">Área plantada e área restante são cálculos: área total prevista × percentual de plantio. Estados sem estimativa publicada aparecem como “—”. Chuva é acumulado estimado em ponto de referência estadual, não média espacial do estado.</p>
+<p class="links"><a id="nationalSource" href="https://www.gov.br/conab/pt-br/atuacao/informacoes-agropecuarias/safras/progresso-de-safra" target="_blank" rel="noopener">Conab · Progresso de Safra</a> <a href="https://www.gov.br/conab/pt-br/assuntos/noticias/primeiro-levantamento-da-safra-de-graos-2026-27-estima-producao-acima-de-367-milhoes-de-toneladas" target="_blank" rel="noopener">Conab · área estimada 2026/27</a></p>
 </section>
 <div class="two" id="mtRegionalDetails"><section class="card"><h2 id="regionalMapTitle">Mapa do Brasil por estado</h2><div id="mapBrazilFocus" style="height:390px;border-radius:10px;border:1px solid var(--line);margin-bottom:14px"></div><p class="muted">Clique em um estado no mapa para destacar seus indicadores ao lado.</p><div id="map" style="display:none"></div></section><section class="card"><h2 id="regionPanelTitle">Plantio por microrregião</h2><div id="regionCoverageNote" class="muted" style="margin-bottom:10px"></div><div class="muted" id="regionDate">Aguardando dados verificados do IMEA.</div><div id="regions"></div><div class="card" style="margin-top:12px;background:#f3f7f4">
 <div class="label" id="avgPriceTitle">Média negociada por saca — Brasil</div>
@@ -61,14 +66,25 @@ function selectState(uf){
  document.getElementById('kpiPlantio').textContent=pct==null?'Sem dado':fmt(pct,1)+'%';
  document.getElementById('kpiPlantioDate').textContent='Referência: '+dateBR(pn.data_referencia);
  document.getElementById('kpiPlantioBar').style.width=(pct==null?0:Math.max(0,Math.min(100,pct)))+'%';
+ const areaHa=s?.area_ha??null;
+ const plantedHa=(areaHa!=null&&pct!=null)?areaHa*pct/100:null;
+ const remainingHa=(areaHa!=null&&pct!=null)?areaHa-plantedHa:null;
+ const ha=n=>n==null?'Sem dado':Math.round(n).toLocaleString('pt-BR')+' ha';
+ document.getElementById('kpiAreaTotal').textContent=ha(areaHa);
+ document.getElementById('kpiAreaPlanted').textContent=ha(plantedHa);
+ document.getElementById('kpiAreaRemaining').textContent=ha(remainingHa);
+ document.getElementById('kpiAreaPlantedNote').textContent=pct==null?'Percentual estadual ainda não integrado':fmt(pct,1)+'% da área total';
+ document.getElementById('kpiAreaRemainingNote').textContent=pct==null?'Aguardando percentual estadual':'Faltam '+fmt(100-pct,1)+'% da área total';
  document.getElementById('kpiWeekly').textContent=week==null?'—':'+'+fmt(week,1)+' p.p.';
- const weather=mt?met.find(x=>/Sorriso|Rondonópolis|Primavera do Leste/i.test(x.regiao)):null;
- document.getElementById('kpiRain').textContent=weather&&weather.chuva_observada_7d_mm!=null?fmt(weather.chuva_observada_7d_mm,1)+' mm':'Sem dado';
- document.getElementById('kpiRainNote').textContent=weather?'Ponto de referência: '+weather.regiao+' · Open-Meteo':'Chuva estadual ainda não integrada para esta seleção';
+ const stateWeather=(p.meteorologia_estados?.regioes||[]).find(x=>x.uf===uf);
+ const validRain=(p.meteorologia_estados?.regioes||[]).filter(x=>x.chuva_observada_7d_mm!=null);
+ const rainValue=s?(stateWeather?.chuva_observada_7d_mm??null):(validRain.length?validRain.reduce((a,x)=>a+x.chuva_observada_7d_mm,0)/validRain.length:null);
+ document.getElementById('kpiRain').textContent=rainValue==null?'Sem dado':fmt(rainValue,1)+' mm';
+ document.getElementById('kpiRainNote').textContent=s?(stateWeather?'Ponto de referência de '+title+' · últimos 7 dias · Open-Meteo':'Chuva ainda sem dado para '+title):(validRain.length?'Média dos pontos de referência estaduais ('+validRain.length+' estados) · últimos 7 dias':'Sem dados meteorológicos estaduais');
  const pr=prices.filter(x=>x.produto==='Soja'&&(!s||x.uf===uf)).sort((a,b)=>new Date(b.data)-new Date(a.data))[0];
  document.getElementById('kpiPrice').textContent=pr?Number(pr.preco).toLocaleString('pt-BR',{style:'currency',currency:'BRL'}):'Sem dado';
  document.getElementById('kpiPriceNote').textContent=pr?pr.cidade+' · '+pr.unidade+' · '+dateBR(pr.data):'Não há cotação cadastrada para esta seleção';
- document.getElementById('stateDetailsNote').textContent=s?'Estado: '+s.estado+'. Clique em outro estado no mapa ou use o menu para trocar a seleção.':'Visão Brasil: o avanço agregado considera os 12 estados monitorados; chuva e preços variam por localidade e são mostrados apenas quando há dado cadastrado.';
+ document.getElementById('stateDetailsNote').textContent=s?'Estado: '+s.estado+'. Hectares plantados e restantes são calculados a partir da área estimada e do percentual disponível.':'Visão Brasil: chuva média dos pontos de referência com dado; percentuais e hectares são exibidos quando há estimativa estadual disponível.';
  const avgFor=product=>{const arr=prices.filter(x=>x.produto===product&&x.unidade==='R$/saca 60 kg'&&(!s||x.uf===uf)&&Number.isFinite(Number(x.preco)));return {avg:arr.length?arr.reduce((a,x)=>a+Number(x.preco),0)/arr.length:null,count:arr.length,dates:[...new Set(arr.map(x=>x.data))].sort().reverse()};};
  const soy=avgFor('Soja'),corn=avgFor('Milho');
  const brl=n=>n==null?'Sem cotação':Number(n).toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:2});
@@ -87,7 +103,9 @@ function renderNational(data){
  document.getElementById('nationalWeekly').textContent=data.avanco_semanal_pp==null?'—':'+'+fmt(data.avanco_semanal_pp)+' p.p.';
  document.getElementById('nationalNote').textContent=data.nota||'';
  document.getElementById('nationalSource').href=data.fonte_url||'https://www.gov.br/conab/pt-br/atuacao/informacoes-agropecuarias/safras/progresso-de-safra';
- document.getElementById('nationalRows').innerHTML=states.slice().sort((a,b)=>b.pct-a.pct).map(s=>'<tr><td><b>'+esc(s.uf)+'</b></td><td>'+esc(s.estado)+'</td><td>'+fmt(s.pct,1)+'%</td><td><div class="bar"><span style="width:'+Math.max(0,Math.min(100,s.pct))+'%;background:'+color(s.pct)+'"></span></div></td></tr>').join('');
+ const weatherByUf=Object.fromEntries(((window.__mainPayload||{}).meteorologia_estados?.regioes||[]).map(w=>[w.uf,w]));
+ const ha=n=>n==null?'—':Math.round(n).toLocaleString('pt-BR');
+ document.getElementById('nationalRows').innerHTML=states.slice().sort((a,b)=>(b.pct??-1)-(a.pct??-1)).map(s=>{const planted=s.area_ha!=null&&s.pct!=null?s.area_ha*s.pct/100:null,remaining=s.area_ha!=null&&s.pct!=null?s.area_ha-planted:null,w=weatherByUf[s.uf];return '<tr><td><b>'+esc(s.uf)+'</b></td><td>'+esc(s.estado)+'</td><td><b>'+(s.pct==null?'Sem dado':fmt(s.pct,1)+'%')+'</b></td><td><div class="bar"><span style="width:'+Math.max(0,Math.min(100,s.pct||0))+'%;background:'+color(s.pct)+'"></span></div></td><td>'+ha(s.area_ha)+'</td><td>'+ha(planted)+'</td><td>'+ha(remaining)+'</td><td>'+(w?.chuva_observada_7d_mm==null?'—':fmt(w.chuva_observada_7d_mm,1))+'</td></tr>'}).join('');
  if(!mapNational){mapNational=L.map('mapNational').setView([-15.5,-52],4);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:7,attribution:'© OpenStreetMap'}).addTo(mapNational)}
  nationalMarkers.forEach(m=>mapNational.removeLayer(m));nationalMarkers=[];
  if(!mapBrazilFocus){mapBrazilFocus=L.map('mapBrazilFocus').setView([-15.5,-52],4);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:7,attribution:'© OpenStreetMap'}).addTo(mapBrazilFocus)}
