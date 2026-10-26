@@ -25,6 +25,12 @@ jobs:
         uses: actions/configure-pages@v5
         with:
           enablement: true
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Buscar dados meteorológicos antes da publicação
+        run: python scripts/collect_weather.py
       - name: Enviar arquivos do site
         uses: actions/upload-pages-artifact@v3
         with:
