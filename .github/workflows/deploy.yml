@@ -6,7 +6,7 @@ on:
   schedule:
     - cron: "50 10 * * *"
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 concurrency:
@@ -29,8 +29,15 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Buscar dados meteorológicos antes da publicação
+      - name: Coletar chuva e previsão
         run: python scripts/collect_weather.py
+      - name: Salvar dados meteorológicos no repositório
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/latest.json
+          git diff --cached --quiet || git commit -m "Atualiza dados meteorológicos"
+          git push
       - name: Enviar arquivos do site
         uses: actions/upload-pages-artifact@v3
         with:
