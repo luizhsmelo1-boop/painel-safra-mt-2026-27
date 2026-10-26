@@ -112,7 +112,7 @@
       {
         "regiao": "Noroeste · Juína",
         "chuva_observada_7d_mm": 24.3,
-        "previsao_7d_mm": 49.0,
+        "previsao_7d_mm": 49,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; não é observação oficial INMET)",
         "latitude": -11.42,
@@ -131,7 +131,7 @@
       },
       {
         "regiao": "Sudeste · Primavera do Leste",
-        "chuva_observada_7d_mm": 2.0,
+        "chuva_observada_7d_mm": 2,
         "previsao_7d_mm": 69.8,
         "atualizado_em": "2026-10-26",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; não é observação oficial INMET)",
@@ -172,91 +172,198 @@
     "fonte_url": "https://www.gov.br/conab/pt-br/atuacao/informacoes-agropecuarias/safras/progresso-de-safra",
     "estados": [
       {
-        "uf": "MT",
-        "estado": "Mato Grosso",
-        "pct": 60.8,
-        "lat": -12.64,
-        "lon": -55.42
+        "uf": "AC",
+        "estado": "Acre",
+        "lat": -9.02,
+        "lon": -70.81
       },
       {
-        "uf": "PR",
-        "estado": "Paraná",
-        "pct": 39,
-        "lat": -24.89,
-        "lon": -51.55
+        "uf": "AL",
+        "estado": "Alagoas",
+        "lat": -9.57,
+        "lon": -36.78
       },
       {
-        "uf": "SP",
-        "estado": "São Paulo",
-        "pct": 35,
-        "lat": -22.19,
-        "lon": -48.79
+        "uf": "AP",
+        "estado": "Amapá",
+        "lat": 1.41,
+        "lon": -51.77
       },
       {
-        "uf": "MS",
-        "estado": "Mato Grosso do Sul",
-        "pct": 28,
-        "lat": -20.77,
-        "lon": -54.78
-      },
-      {
-        "uf": "GO",
-        "estado": "Goiás",
-        "pct": 26,
-        "lat": -15.93,
-        "lon": -49.25
+        "uf": "AM",
+        "estado": "Amazonas",
+        "lat": -3.47,
+        "lon": -65.1
       },
       {
         "uf": "BA",
         "estado": "Bahia",
-        "pct": 14,
         "lat": -12.58,
-        "lon": -41.7
+        "lon": -41.7,
+        "pct": 14,
+        "area_ha": 2263300
       },
       {
-        "uf": "MG",
-        "estado": "Minas Gerais",
-        "pct": 11.2,
-        "lat": -18.51,
-        "lon": -44.55
+        "uf": "CE",
+        "estado": "Ceará",
+        "lat": -5.2,
+        "lon": -39.53
       },
       {
-        "uf": "SC",
-        "estado": "Santa Catarina",
-        "pct": 10.9,
-        "lat": -27.24,
-        "lon": -50.22
+        "uf": "DF",
+        "estado": "Distrito Federal",
+        "lat": -15.8,
+        "lon": -47.88
       },
       {
-        "uf": "RS",
-        "estado": "Rio Grande do Sul",
-        "pct": 1,
-        "lat": -30.03,
-        "lon": -53.2
+        "uf": "ES",
+        "estado": "Espírito Santo",
+        "lat": -19.57,
+        "lon": -40.54
       },
       {
-        "uf": "TO",
-        "estado": "Tocantins",
-        "pct": 0,
-        "lat": -10.25,
-        "lon": -48.25
+        "uf": "GO",
+        "estado": "Goiás",
+        "lat": -15.93,
+        "lon": -49.25,
+        "pct": 26,
+        "area_ha": 5199300
       },
       {
         "uf": "MA",
         "estado": "Maranhão",
-        "pct": 0,
         "lat": -5.42,
-        "lon": -45.44
+        "lon": -45.44,
+        "pct": 0,
+        "area_ha": 1603600
+      },
+      {
+        "uf": "MT",
+        "estado": "Mato Grosso",
+        "lat": -12.64,
+        "lon": -55.42,
+        "pct": 60.8,
+        "area_ha": 13084200
+      },
+      {
+        "uf": "MS",
+        "estado": "Mato Grosso do Sul",
+        "lat": -20.77,
+        "lon": -54.78,
+        "pct": 28,
+        "area_ha": 4451200
+      },
+      {
+        "uf": "MG",
+        "estado": "Minas Gerais",
+        "lat": -18.51,
+        "lon": -44.55,
+        "pct": 11.2,
+        "area_ha": 2405600
+      },
+      {
+        "uf": "PA",
+        "estado": "Pará",
+        "lat": -3.79,
+        "lon": -52.48,
+        "area_ha": 1519500
+      },
+      {
+        "uf": "PB",
+        "estado": "Paraíba",
+        "lat": -7.12,
+        "lon": -36.72
+      },
+      {
+        "uf": "PR",
+        "estado": "Paraná",
+        "lat": -24.89,
+        "lon": -51.55,
+        "pct": 39,
+        "area_ha": 5825100
+      },
+      {
+        "uf": "PE",
+        "estado": "Pernambuco",
+        "lat": -8.38,
+        "lon": -37.86
       },
       {
         "uf": "PI",
         "estado": "Piauí",
-        "pct": 0,
         "lat": -7.72,
-        "lon": -42.73
+        "lon": -42.73,
+        "pct": 0,
+        "area_ha": 1153300
+      },
+      {
+        "uf": "RJ",
+        "estado": "Rio de Janeiro",
+        "lat": -22.25,
+        "lon": -42.66
+      },
+      {
+        "uf": "RN",
+        "estado": "Rio Grande do Norte",
+        "lat": -5.81,
+        "lon": -36.59
+      },
+      {
+        "uf": "RS",
+        "estado": "Rio Grande do Sul",
+        "lat": -30.03,
+        "lon": -53.2,
+        "pct": 1,
+        "area_ha": 6743100
+      },
+      {
+        "uf": "RO",
+        "estado": "Rondônia",
+        "lat": -10.83,
+        "lon": -63.34,
+        "area_ha": 766500
+      },
+      {
+        "uf": "RR",
+        "estado": "Roraima",
+        "lat": 2.05,
+        "lon": -61.4,
+        "area_ha": 163400
+      },
+      {
+        "uf": "SC",
+        "estado": "Santa Catarina",
+        "lat": -27.24,
+        "lon": -50.22,
+        "pct": 10.9,
+        "area_ha": 828800
+      },
+      {
+        "uf": "SP",
+        "estado": "São Paulo",
+        "lat": -22.19,
+        "lon": -48.79,
+        "pct": 35,
+        "area_ha": 1422800
+      },
+      {
+        "uf": "SE",
+        "estado": "Sergipe",
+        "lat": -10.57,
+        "lon": -37.45
+      },
+      {
+        "uf": "TO",
+        "estado": "Tocantins",
+        "lat": -10.25,
+        "lon": -48.25,
+        "pct": 0,
+        "area_ha": 1716700
       }
     ],
-    "nota": "Percentuais estaduais referentes ao acompanhamento até 18/10/2026. A média de 30,1% e o avanço semanal de 14,5 p.p. referem-se ao conjunto de 12 estados, não a todos os 26 estados e DF. Dados compilados a partir de divulgação que atribui os números à Conab; conferir o boletim oficial vinculado."
+    "nota": "Percentuais de plantio disponíveis apenas para estados com acompanhamento estadual publicado no conjunto atual; os demais aparecem sem percentual. Áreas estaduais são estimativas preliminares e estão disponíveis apenas para estados com estimativa cadastrada.",
+    "area_fonte": "Conab — 1º Levantamento da Safra de Grãos 2026/27; áreas estaduais preliminares compiladas a partir da divulgação do levantamento.",
+    "area_fonte_url": "https://www.gov.br/conab/pt-br/assuntos/noticias/primeiro-levantamento-da-safra-de-graos-2026-27-estima-producao-acima-de-367-milhoes-de-toneladas"
   },
   "cotacoes_graos": {
     "atualizado_em": "2026-10-26",
@@ -751,6 +858,336 @@
         "data": "2026-10-23",
         "fonte": "Agrolink",
         "fonte_url": "https://www.agrolink.com.br/regional/mt"
+      }
+    ]
+  },
+  "meteorologia_estados": {
+    "atualizado_em": null,
+    "observacao": "Aguardando a primeira coleta para os 27 estados. Valores serão estimativas de um ponto de referência por UF, não média espacial estadual.",
+    "regioes": [
+      {
+        "uf": "AC",
+        "estado": "Acre",
+        "regiao": "Acre",
+        "chuva_observada_7d_mm": null,
+        "previsao_7d_mm": null,
+        "atualizado_em": null,
+        "fonte": "Aguardando coleta Open-Meteo",
+        "latitude": -9.02,
+        "longitude": -70.81,
+        "avisos": []
+      },
+      {
+        "uf": "AL",
+        "estado": "Alagoas",
+        "regiao": "Alagoas",
+        "chuva_observada_7d_mm": null,
+        "previsao_7d_mm": null,
+        "atualizado_em": null,
+        "fonte": "Aguardando coleta Open-Meteo",
+        "latitude": -9.57,
+        "longitude": -36.78,
+        "avisos": []
+      },
+      {
+        "uf": "AP",
+        "estado": "Amapá",
+        "regiao": "Amapá",
+        "chuva_observada_7d_mm": null,
+        "previsao_7d_mm": null,
+        "atualizado_em": null,
+        "fonte": "Aguardando coleta Open-Meteo",
+        "latitude": 1.41,
+        "longitude": -51.77,
+        "avisos": []
+      },
+      {
+        "uf": "AM",
+        "estado": "Amazonas",
+        "regiao": "Amazonas",
+        "chuva_observada_7d_mm": null,
+        "previsao_7d_mm": null,
+        "atualizado_em": null,
+        "fonte": "Aguardando coleta Open-Meteo",
+        "latitude": -3.47,
+        "longitude": -65.1,
+        "avisos": []
+      },
+      {
+        "uf": "BA",
+        "estado": "Bahia",
+        "regiao": "Bahia",
+        "chuva_observada_7d_mm": null,
+        "previsao_7d_mm": null,
+        "atualizado_em": null,
+        "fonte": "Aguardando coleta Open-Meteo",
+        "latitude": -12.58,
+        "longitude": -41.7,
+        "avisos": []
+      },
+      {
+        "uf": "CE",
+        "estado": "Ceará",
+        "regiao": "Ceará",
+        "chuva_observada_7d_mm": null,
+        "previsao_7d_mm": null,
+        "atualizado_em": null,
+        "fonte": "Aguardando coleta Open-Meteo",
+        "latitude": -5.2,
+        "longitude": -39.53,
+        "avisos": []
+      },
+      {
+        "uf": "DF",
+        "estado": "Distrito Federal",
+        "regiao": "Distrito Federal",
+        "chuva_observada_7d_mm": null,
+        "previsao_7d_mm": null,
+        "atualizado_em": null,
+        "fonte": "Aguardando coleta Open-Meteo",
+        "latitude": -15.8,
+        "longitude": -47.88,
+        "avisos": []
+      },
+      {
+        "uf": "ES",
+        "estado": "Espírito Santo",
+        "regiao": "Espírito Santo",
+        "chuva_observada_7d_mm": null,
+        "previsao_7d_mm": null,
+        "atualizado_em": null,
+        "fonte": "Aguardando coleta Open-Meteo",
+        "latitude": -19.57,
+        "longitude": -40.54,
+        "avisos": []
+      },
+      {
+        "uf": "GO",
+        "estado": "Goiás",
+        "regiao": "Goiás",
+        "chuva_observada_7d_mm": null,
+        "previsao_7d_mm": null,
+        "atualizado_em": null,
+        "fonte": "Aguardando coleta Open-Meteo",
+        "latitude": -15.93,
+        "longitude": -49.25,
+        "avisos": []
+      },
+      {
+        "uf": "MA",
+        "estado": "Maranhão",
+        "regiao": "Maranhão",
+        "chuva_observada_7d_mm": null,
+        "previsao_7d_mm": null,
+        "atualizado_em": null,
+        "fonte": "Aguardando coleta Open-Meteo",
+        "latitude": -5.42,
+        "longitude": -45.44,
+        "avisos": []
+      },
+      {
+        "uf": "MT",
+        "estado": "Mato Grosso",
+        "regiao": "Mato Grosso",
+        "chuva_observada_7d_mm": null,
+        "previsao_7d_mm": null,
+        "atualizado_em": null,
+        "fonte": "Aguardando coleta Open-Meteo",
+        "latitude": -12.64,
+        "longitude": -55.42,
+        "avisos": []
+      },
+      {
+        "uf": "MS",
+        "estado": "Mato Grosso do Sul",
+        "regiao": "Mato Grosso do Sul",
+        "chuva_observada_7d_mm": null,
+        "previsao_7d_mm": null,
+        "atualizado_em": null,
+        "fonte": "Aguardando coleta Open-Meteo",
+        "latitude": -20.77,
+        "longitude": -54.78,
+        "avisos": []
+      },
+      {
+        "uf": "MG",
+        "estado": "Minas Gerais",
+        "regiao": "Minas Gerais",
+        "chuva_observada_7d_mm": null,
+        "previsao_7d_mm": null,
+        "atualizado_em": null,
+        "fonte": "Aguardando coleta Open-Meteo",
+        "latitude": -18.51,
+        "longitude": -44.55,
+        "avisos": []
+      },
+      {
+        "uf": "PA",
+        "estado": "Pará",
+        "regiao": "Pará",
+        "chuva_observada_7d_mm": null,
+        "previsao_7d_mm": null,
+        "atualizado_em": null,
+        "fonte": "Aguardando coleta Open-Meteo",
+        "latitude": -3.79,
+        "longitude": -52.48,
+        "avisos": []
+      },
+      {
+        "uf": "PB",
+        "estado": "Paraíba",
+        "regiao": "Paraíba",
+        "chuva_observada_7d_mm": null,
+        "previsao_7d_mm": null,
+        "atualizado_em": null,
+        "fonte": "Aguardando coleta Open-Meteo",
+        "latitude": -7.12,
+        "longitude": -36.72,
+        "avisos": []
+      },
+      {
+        "uf": "PR",
+        "estado": "Paraná",
+        "regiao": "Paraná",
+        "chuva_observada_7d_mm": null,
+        "previsao_7d_mm": null,
+        "atualizado_em": null,
+        "fonte": "Aguardando coleta Open-Meteo",
+        "latitude": -24.89,
+        "longitude": -51.55,
+        "avisos": []
+      },
+      {
+        "uf": "PE",
+        "estado": "Pernambuco",
+        "regiao": "Pernambuco",
+        "chuva_observada_7d_mm": null,
+        "previsao_7d_mm": null,
+        "atualizado_em": null,
+        "fonte": "Aguardando coleta Open-Meteo",
+        "latitude": -8.38,
+        "longitude": -37.86,
+        "avisos": []
+      },
+      {
+        "uf": "PI",
+        "estado": "Piauí",
+        "regiao": "Piauí",
+        "chuva_observada_7d_mm": null,
+        "previsao_7d_mm": null,
+        "atualizado_em": null,
+        "fonte": "Aguardando coleta Open-Meteo",
+        "latitude": -7.72,
+        "longitude": -42.73,
+        "avisos": []
+      },
+      {
+        "uf": "RJ",
+        "estado": "Rio de Janeiro",
+        "regiao": "Rio de Janeiro",
+        "chuva_observada_7d_mm": null,
+        "previsao_7d_mm": null,
+        "atualizado_em": null,
+        "fonte": "Aguardando coleta Open-Meteo",
+        "latitude": -22.25,
+        "longitude": -42.66,
+        "avisos": []
+      },
+      {
+        "uf": "RN",
+        "estado": "Rio Grande do Norte",
+        "regiao": "Rio Grande do Norte",
+        "chuva_observada_7d_mm": null,
+        "previsao_7d_mm": null,
+        "atualizado_em": null,
+        "fonte": "Aguardando coleta Open-Meteo",
+        "latitude": -5.81,
+        "longitude": -36.59,
+        "avisos": []
+      },
+      {
+        "uf": "RS",
+        "estado": "Rio Grande do Sul",
+        "regiao": "Rio Grande do Sul",
+        "chuva_observada_7d_mm": null,
+        "previsao_7d_mm": null,
+        "atualizado_em": null,
+        "fonte": "Aguardando coleta Open-Meteo",
+        "latitude": -30.03,
+        "longitude": -53.2,
+        "avisos": []
+      },
+      {
+        "uf": "RO",
+        "estado": "Rondônia",
+        "regiao": "Rondônia",
+        "chuva_observada_7d_mm": null,
+        "previsao_7d_mm": null,
+        "atualizado_em": null,
+        "fonte": "Aguardando coleta Open-Meteo",
+        "latitude": -10.83,
+        "longitude": -63.34,
+        "avisos": []
+      },
+      {
+        "uf": "RR",
+        "estado": "Roraima",
+        "regiao": "Roraima",
+        "chuva_observada_7d_mm": null,
+        "previsao_7d_mm": null,
+        "atualizado_em": null,
+        "fonte": "Aguardando coleta Open-Meteo",
+        "latitude": 2.05,
+        "longitude": -61.4,
+        "avisos": []
+      },
+      {
+        "uf": "SC",
+        "estado": "Santa Catarina",
+        "regiao": "Santa Catarina",
+        "chuva_observada_7d_mm": null,
+        "previsao_7d_mm": null,
+        "atualizado_em": null,
+        "fonte": "Aguardando coleta Open-Meteo",
+        "latitude": -27.24,
+        "longitude": -50.22,
+        "avisos": []
+      },
+      {
+        "uf": "SP",
+        "estado": "São Paulo",
+        "regiao": "São Paulo",
+        "chuva_observada_7d_mm": null,
+        "previsao_7d_mm": null,
+        "atualizado_em": null,
+        "fonte": "Aguardando coleta Open-Meteo",
+        "latitude": -22.19,
+        "longitude": -48.79,
+        "avisos": []
+      },
+      {
+        "uf": "SE",
+        "estado": "Sergipe",
+        "regiao": "Sergipe",
+        "chuva_observada_7d_mm": null,
+        "previsao_7d_mm": null,
+        "atualizado_em": null,
+        "fonte": "Aguardando coleta Open-Meteo",
+        "latitude": -10.57,
+        "longitude": -37.45,
+        "avisos": []
+      },
+      {
+        "uf": "TO",
+        "estado": "Tocantins",
+        "regiao": "Tocantins",
+        "chuva_observada_7d_mm": null,
+        "previsao_7d_mm": null,
+        "atualizado_em": null,
+        "fonte": "Aguardando coleta Open-Meteo",
+        "latitude": -10.25,
+        "longitude": -48.25,
+        "avisos": []
       }
     ]
   }
