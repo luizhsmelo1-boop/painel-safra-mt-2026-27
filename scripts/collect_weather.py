@@ -39,20 +39,24 @@ def get_json(url):
  req=urllib.request.Request(url,headers={"User-Agent":"PainelSafraMT/1.0"})
  with urllib.request.urlopen(req,timeout=25) as r:return json.loads(r.read().decode())
 def point(r):
- today=date.today();start=today-timedelta(days=7)
+ today=date.today();start=today-timedelta(days=15)
  def query(base,params):return get_json(base+"?"+urllib.parse.urlencode(params))
  obs=fc=None;errs=[]
  try:
   a=query("https://archive-api.open-meteo.com/v1/archive",{"latitude":r["lat"],"longitude":r["lon"],"start_date":start.isoformat(),"end_date":(today-timedelta(days=1)).isoformat(),"daily":"precipitation_sum","timezone":"America/Cuiaba"})
-  vals=[v for v in (a.get("daily",{}).get("precipitation_sum") or []) if isinstance(v,(int,float))]
+  daily_vals=a.get("daily",{}).get("precipitation_sum") or [];vals=[v for v in daily_vals[-7:] if isinstance(v,(int,float))]
   if vals:obs=round(sum(vals),1)
+  dry_days=0
+  for v in reversed(daily_vals):
+   if isinstance(v,(int,float)) and v<1:dry_days+=1
+   else:break
  except Exception as e:errs.append("arquivo: "+str(e)[:100])
  try:
   f=query("https://api.open-meteo.com/v1/forecast",{"latitude":r["lat"],"longitude":r["lon"],"forecast_days":7,"daily":"precipitation_sum","timezone":"America/Cuiaba"})
   vals=[v for v in (f.get("daily",{}).get("precipitation_sum") or []) if isinstance(v,(int,float))]
   if vals:fc=round(sum(vals),1)
  except Exception as e:errs.append("previsão: "+str(e)[:100])
- return {"regiao":r["regiao"],"chuva_observada_7d_mm":obs,"previsao_7d_mm":fc,"atualizado_em":today.isoformat(),"fonte":"Open-Meteo (arquivo/reanálise e modelo; não é observação oficial INMET)","latitude":r["lat"],"longitude":r["lon"],"avisos":errs}
+ return {"regiao":r["regiao"],"chuva_observada_7d_mm":obs,"dias_sem_chuva":dry_days if "dry_days" in locals() else None,"previsao_7d_mm":fc,"atualizado_em":today.isoformat(),"fonte":"Open-Meteo (arquivo/reanálise e modelo; não é observação oficial INMET)","latitude":r["lat"],"longitude":r["lon"],"avisos":errs}
 def main():
  payload=json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {"plantio":{},"meteorologia":{},"historico_plantio":[],"status":{}}
  today=date.today().isoformat();old={x.get("regiao"):x for x in payload.get("meteorologia",{}).get("regioes",[])};results=[]
@@ -68,18 +72,25 @@ def main():
  old_states={x.get("uf"):x for x in payload.get("meteorologia_estados",{}).get("regioes",[])}
  state_results=[]
  today_date=date.today()
- start_date=today_date-timedelta(days=7)
+ start_date=today_date-timedelta(days=15)
  latitudes=",".join(str(r["lat"]) for r in STATE_REGIONS)
  longitudes=",".join(str(r["lon"]) for r in STATE_REGIONS)
  obs_values=[None]*len(STATE_REGIONS)
+ dry_values=[None]*len(STATE_REGIONS)
  fc_values=[None]*len(STATE_REGIONS)
  batch_errors=[]
  try:
   a=get_json("https://archive-api.open-meteo.com/v1/archive?"+urllib.parse.urlencode({"latitude":latitudes,"longitude":longitudes,"start_date":start_date.isoformat(),"end_date":(today_date-timedelta(days=1)).isoformat(),"daily":"precipitation_sum","timezone":"America/Cuiaba"}))
   items=a if isinstance(a,list) else [a]
   for i,item in enumerate(items[:len(STATE_REGIONS)]):
-   vals=[v for v in (item.get("daily",{}).get("precipitation_sum") or []) if isinstance(v,(int,float))]
+   daily_vals=item.get("daily",{}).get("precipitation_sum") or []
+   vals=[v for v in daily_vals[-7:] if isinstance(v,(int,float))]
    if vals: obs_values[i]=round(sum(vals),1)
+   dry=0
+   for v in reversed(daily_vals):
+    if isinstance(v,(int,float)) and v<1:dry+=1
+    else:break
+   dry_values[i]=dry
  except Exception as e:
   batch_errors.append("arquivo: "+str(e)[:120])
  try:
@@ -91,12 +102,12 @@ def main():
  except Exception as e:
   batch_errors.append("previsão: "+str(e)[:120])
  for i,r in enumerate(STATE_REGIONS):
-  x={"uf":r["uf"],"estado":r["estado"],"regiao":r["estado"],"chuva_observada_7d_mm":obs_values[i],"previsao_7d_mm":fc_values[i],"atualizado_em":today,"fonte":"Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)","latitude":r["lat"],"longitude":r["lon"],"avisos":batch_errors[:]}
+  x={"uf":r["uf"],"estado":r["estado"],"regiao":r["estado"],"chuva_observada_7d_mm":obs_values[i],"dias_sem_chuva":dry_values[i],"previsao_7d_mm":fc_values[i],"atualizado_em":today,"fonte":"Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)","latitude":r["lat"],"longitude":r["lon"],"avisos":batch_errors[:]}
   if x["chuva_observada_7d_mm"] is None and x["previsao_7d_mm"] is None and r["uf"] in old_states:
    x=old_states[r["uf"]]
    x["aviso"]="Falha na atualização em lote; preservado último valor válido."
   state_results.append(x)
- payload["meteorologia_estados"]={"atualizado_em":today,"observacao":"Precipitação acumulada nos últimos 7 dias por um ponto de referência em cada UF, estimada por arquivo/reanálise Open-Meteo; não representa a média espacial do estado e não é medição oficial INMET.","regioes":state_results}
+ payload["meteorologia_estados"]={"atualizado_em":today,"observacao":"Precipitação dos últimos 7 dias e sequência estimada de dias com menos de 1 mm/dia, em ponto de referência por UF via arquivo/reanálise Open-Meteo; não representa média espacial do estado e não é medição oficial INMET.","regioes":state_results}
  payload.setdefault("status",{})["ultima_execucao"]=datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
  ok=any(x.get("previsao_7d_mm") is not None or x.get("chuva_observada_7d_mm") is not None for x in results)
  payload["status"]["meteorologia"]="OK" if ok else "Falha; dados anteriores preservados quando disponíveis"
