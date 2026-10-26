@@ -13,7 +13,7 @@
 <div class="card"><div class="label">Preço da soja</div><div class="value" id="kpiPrice">—</div><div class="muted" id="kpiPriceNote">Preço referencial por praça</div></div>
 </div>
 <div class="grid" style="margin-top:12px">
-<div class="card"><div class="label">Área total prevista</div><div class="value" id="kpiAreaTotal">—</div><div class="muted">Hectares de soja na safra 2026/27</div></div>
+<div class="card"><div class="label">Área total prevista</div><div class="value" id="kpiAreaTotal">—</div><div class="muted" id="kpiAreaTotalNote">Hectares de soja na safra 2026/27</div></div>
 <div class="card"><div class="label">Área já plantada</div><div class="value" id="kpiAreaPlanted">—</div><div class="muted" id="kpiAreaPlantedNote">Calculada a partir do percentual</div></div>
 <div class="card"><div class="label">Falta plantar</div><div class="value" id="kpiAreaRemaining">—</div><div class="muted" id="kpiAreaRemainingNote">Área prevista menos área plantada</div></div>
 </div>
@@ -28,7 +28,7 @@
 <div><div class="label">Avanço semanal</div><div class="value" id="nationalWeekly">—</div></div>
 </div>
 <div id="mapNational" style="height:390px;border-radius:10px;border:1px solid var(--line);margin-bottom:14px"></div>
-<div style="overflow-x:auto"><table><thead><tr><th>UF</th><th>Estado</th><th>Plantio (%)</th><th>Progresso</th><th>Área total (ha)</th><th>Plantado (ha)</th><th>Falta plantar (ha)</th><th>Chuva 7 dias (mm)</th></tr></thead><tbody id="nationalRows"><tr><td colspan="4">Carregando…</td></tr></tbody></table></div>
+<div style="overflow-x:auto"><table><thead><tr><th>UF</th><th>Estado</th><th>Plantio (%)</th><th>Avanço semanal (p.p.)</th><th>Progresso</th><th>Área total (ha)</th><th>Plantado (ha)</th><th>Falta plantar (ha)</th><th>Chuva 7 dias (mm)</th></tr></thead><tbody id="nationalRows"><tr><td colspan="4">Carregando…</td></tr></tbody></table></div>
 <p class="muted" id="nationalNote"></p><p class="muted">Área plantada e área restante são cálculos: área total prevista × percentual de plantio. Estados sem estimativa publicada aparecem como “—”. Chuva é acumulado estimado em ponto de referência estadual, não média espacial do estado.</p>
 <p class="links"><a id="nationalSource" href="https://www.gov.br/conab/pt-br/atuacao/informacoes-agropecuarias/safras/progresso-de-safra" target="_blank" rel="noopener">Conab · Progresso de Safra</a> <a href="https://www.gov.br/conab/pt-br/assuntos/noticias/primeiro-levantamento-da-safra-de-graos-2026-27-estima-producao-acima-de-367-milhoes-de-toneladas" target="_blank" rel="noopener">Conab · área estimada 2026/27</a></p>
 </section>
@@ -70,11 +70,25 @@ function selectState(uf){
  const plantedHa=(areaHa!=null&&pct!=null)?areaHa*pct/100:null;
  const remainingHa=(areaHa!=null&&pct!=null)?areaHa-plantedHa:null;
  const ha=n=>n==null?'Sem dado':Math.round(n).toLocaleString('pt-BR')+' ha';
- document.getElementById('kpiAreaTotal').textContent=ha(areaHa);
- document.getElementById('kpiAreaPlanted').textContent=ha(plantedHa);
- document.getElementById('kpiAreaRemaining').textContent=ha(remainingHa);
- document.getElementById('kpiAreaPlantedNote').textContent=pct==null?'Percentual estadual ainda não integrado':fmt(pct,1)+'% da área total';
- document.getElementById('kpiAreaRemainingNote').textContent=pct==null?'Aguardando percentual estadual':'Faltam '+fmt(100-pct,1)+'% da área total';
+ if(!s){
+  const withArea=states.filter(x=>x.area_ha!=null),withPct=states.filter(x=>x.area_ha!=null&&x.pct!=null);
+  const total=withArea.reduce((a,x)=>a+x.area_ha,0);
+  const planted=withPct.reduce((a,x)=>a+x.area_ha*x.pct/100,0);
+  const covered=withPct.reduce((a,x)=>a+x.area_ha,0);
+  document.getElementById('kpiAreaTotal').textContent=ha(total);
+  document.getElementById('kpiAreaPlanted').textContent=ha(planted);
+  document.getElementById('kpiAreaRemaining').textContent=ha(covered-planted);
+  document.getElementById('kpiAreaTotalNote').textContent='Soma das estimativas cadastradas ('+withArea.length+' UFs)';
+  document.getElementById('kpiAreaPlantedNote').textContent='Subtotal calculado em '+withPct.length+' UFs com área e percentual';
+  document.getElementById('kpiAreaRemainingNote').textContent='Subtotal das mesmas '+withPct.length+' UFs; não inclui estados sem percentual';
+ }else{
+  document.getElementById('kpiAreaTotal').textContent=ha(areaHa);
+  document.getElementById('kpiAreaPlanted').textContent=ha(plantedHa);
+  document.getElementById('kpiAreaRemaining').textContent=ha(remainingHa);
+  document.getElementById('kpiAreaTotalNote').textContent='Estimativa de área de '+title;
+  document.getElementById('kpiAreaPlantedNote').textContent=pct==null?'Percentual estadual ainda não integrado':fmt(pct,1)+'% da área total';
+  document.getElementById('kpiAreaRemainingNote').textContent=pct==null?'Aguardando percentual estadual':'Faltam '+fmt(100-pct,1)+'% da área total';
+ }
  document.getElementById('kpiWeekly').textContent=week==null?'—':'+'+fmt(week,1)+' p.p.';
  const stateWeather=(p.meteorologia_estados?.regioes||[]).find(x=>x.uf===uf);
  const validRain=(p.meteorologia_estados?.regioes||[]).filter(x=>x.chuva_observada_7d_mm!=null);
@@ -84,7 +98,7 @@ function selectState(uf){
  const pr=prices.filter(x=>x.produto==='Soja'&&(!s||x.uf===uf)).sort((a,b)=>new Date(b.data)-new Date(a.data))[0];
  document.getElementById('kpiPrice').textContent=pr?Number(pr.preco).toLocaleString('pt-BR',{style:'currency',currency:'BRL'}):'Sem dado';
  document.getElementById('kpiPriceNote').textContent=pr?pr.cidade+' · '+pr.unidade+' · '+dateBR(pr.data):'Não há cotação cadastrada para esta seleção';
- document.getElementById('stateDetailsNote').textContent=s?'Estado: '+s.estado+'. Hectares plantados e restantes são calculados a partir da área estimada e do percentual disponível.':'Visão Brasil: chuva média dos pontos de referência com dado; percentuais e hectares são exibidos quando há estimativa estadual disponível.';
+ document.getElementById('stateDetailsNote').textContent=s?'Estado: '+s.estado+'. Hectares plantados e restantes são calculados a partir da área estimada e do percentual disponível.':'Visão Brasil: áreas totais somam estimativas cadastradas; plantado e falta plantar são subtotais dos estados com área e percentual disponíveis. O avanço semanal por UF só aparece quando houver dado específico publicado.';
  const avgFor=product=>{const arr=prices.filter(x=>x.produto===product&&x.unidade==='R$/saca 60 kg'&&(!s||x.uf===uf)&&Number.isFinite(Number(x.preco)));return {avg:arr.length?arr.reduce((a,x)=>a+Number(x.preco),0)/arr.length:null,count:arr.length,dates:[...new Set(arr.map(x=>x.data))].sort().reverse()};};
  const soy=avgFor('Soja'),corn=avgFor('Milho');
  const brl=n=>n==null?'Sem cotação':Number(n).toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:2});
@@ -119,7 +133,7 @@ function renderNational(data){
  document.getElementById('nationalSource').href=data.fonte_url||'https://www.gov.br/conab/pt-br/atuacao/informacoes-agropecuarias/safras/progresso-de-safra';
  const weatherByUf=Object.fromEntries(((window.__mainPayload||{}).meteorologia_estados?.regioes||[]).map(w=>[w.uf,w]));
  const ha=n=>n==null?'—':Math.round(n).toLocaleString('pt-BR');
- document.getElementById('nationalRows').innerHTML=states.slice().sort((a,b)=>(b.pct??-1)-(a.pct??-1)).map(s=>{const planted=s.area_ha!=null&&s.pct!=null?s.area_ha*s.pct/100:null,remaining=s.area_ha!=null&&s.pct!=null?s.area_ha-planted:null,w=weatherByUf[s.uf];return '<tr><td><b>'+esc(s.uf)+'</b></td><td>'+esc(s.estado)+'</td><td><b>'+(s.pct==null?'Sem dado':fmt(s.pct,1)+'%')+'</b></td><td><div class="bar"><span style="width:'+Math.max(0,Math.min(100,s.pct||0))+'%;background:'+color(s.pct)+'"></span></div></td><td>'+ha(s.area_ha)+'</td><td>'+ha(planted)+'</td><td>'+ha(remaining)+'</td><td>'+(w?.chuva_observada_7d_mm==null?'—':fmt(w.chuva_observada_7d_mm,1))+'</td></tr>'}).join('');
+ document.getElementById('nationalRows').innerHTML=states.slice().sort((a,b)=>(b.pct??-1)-(a.pct??-1)).map(s=>{const planted=s.area_ha!=null&&s.pct!=null?s.area_ha*s.pct/100:null,remaining=s.area_ha!=null&&s.pct!=null?s.area_ha-planted:null,w=weatherByUf[s.uf];return '<tr><td><b>'+esc(s.uf)+'</b></td><td>'+esc(s.estado)+'</td><td><b>'+(s.pct==null?'Sem dado':fmt(s.pct,1)+'%')+'</b></td><td>'+(s.avanco_semanal_pp==null?'Sem dado':(s.avanco_semanal_pp>=0?'+':'')+fmt(s.avanco_semanal_pp,1))+'</td><td><div class="bar"><span style="width:'+Math.max(0,Math.min(100,s.pct||0))+'%;background:'+color(s.pct)+'"></span></div></td><td>'+ha(s.area_ha)+'</td><td>'+ha(planted)+'</td><td>'+ha(remaining)+'</td><td>'+(w?.chuva_observada_7d_mm==null?'—':fmt(w.chuva_observada_7d_mm,1))+'</td></tr>'}).join('');
  if(!mapNational){mapNational=L.map('mapNational').setView([-15.5,-52],4);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:7,attribution:'© OpenStreetMap'}).addTo(mapNational)}
  nationalMarkers.forEach(m=>mapNational.removeLayer(m));nationalMarkers=[];
  if(!mapBrazilFocus){mapBrazilFocus=L.map('mapBrazilFocus').setView([-15.5,-52],4);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:7,attribution:'© OpenStreetMap'}).addTo(mapBrazilFocus)}
