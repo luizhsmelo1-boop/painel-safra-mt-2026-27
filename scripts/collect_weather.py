@@ -64,20 +64,38 @@ def main():
   except Exception as e:
    x=old.get(r["regiao"],{"regiao":r["regiao"],"chuva_observada_7d_mm":None,"previsao_7d_mm":None,"atualizado_em":today,"fonte":"Sem dado válido"});x["aviso"]="Falha na coleta: "+str(e)[:120];results.append(x)
  payload["meteorologia"]={"atualizado_em":today,"observacao":"Precipitação recente estimada por arquivo/reanálise e previsão por modelo Open-Meteo. Não é medição oficial INMET e ponto não representa toda a macrorregião.","regioes":results}
- # Chuva estadual: um ponto de referência por UF; não representa a média espacial do estado.
+ # Chuva estadual em lote: um ponto de referência por UF; não representa a média espacial do estado.
  old_states={x.get("uf"):x for x in payload.get("meteorologia_estados",{}).get("regioes",[])}
  state_results=[]
- for r in STATE_REGIONS:
-  try:
-   x=point({"regiao":r["estado"],"lat":r["lat"],"lon":r["lon"]})
-   x.update({"uf":r["uf"],"estado":r["estado"]})
-   if x["chuva_observada_7d_mm"] is None and x["previsao_7d_mm"] is None and r["uf"] in old_states:
-    x=old_states[r["uf"]];x["aviso"]="Falha na atualização; preservado último valor válido."
-   state_results.append(x)
-  except Exception as e:
-   x=old_states.get(r["uf"],{"uf":r["uf"],"estado":r["estado"],"regiao":r["estado"],"chuva_observada_7d_mm":None,"previsao_7d_mm":None,"atualizado_em":today,"fonte":"Sem dado válido","latitude":r["lat"],"longitude":r["lon"]})
-   x["aviso"]="Falha na coleta: "+str(e)[:120]
-   state_results.append(x)
+ today_date=date.today()
+ start_date=today_date-timedelta(days=7)
+ latitudes=",".join(str(r["lat"]) for r in STATE_REGIONS)
+ longitudes=",".join(str(r["lon"]) for r in STATE_REGIONS)
+ obs_values=[None]*len(STATE_REGIONS)
+ fc_values=[None]*len(STATE_REGIONS)
+ batch_errors=[]
+ try:
+  a=get_json("https://archive-api.open-meteo.com/v1/archive?"+urllib.parse.urlencode({"latitude":latitudes,"longitude":longitudes,"start_date":start_date.isoformat(),"end_date":(today_date-timedelta(days=1)).isoformat(),"daily":"precipitation_sum","timezone":"America/Cuiaba"}))
+  items=a if isinstance(a,list) else [a]
+  for i,item in enumerate(items[:len(STATE_REGIONS)]):
+   vals=[v for v in (item.get("daily",{}).get("precipitation_sum") or []) if isinstance(v,(int,float))]
+   if vals: obs_values[i]=round(sum(vals),1)
+ except Exception as e:
+  batch_errors.append("arquivo: "+str(e)[:120])
+ try:
+  f=get_json("https://api.open-meteo.com/v1/forecast?"+urllib.parse.urlencode({"latitude":latitudes,"longitude":longitudes,"forecast_days":7,"daily":"precipitation_sum","timezone":"America/Cuiaba"}))
+  items=f if isinstance(f,list) else [f]
+  for i,item in enumerate(items[:len(STATE_REGIONS)]):
+   vals=[v for v in (item.get("daily",{}).get("precipitation_sum") or []) if isinstance(v,(int,float))]
+   if vals: fc_values[i]=round(sum(vals),1)
+ except Exception as e:
+  batch_errors.append("previsão: "+str(e)[:120])
+ for i,r in enumerate(STATE_REGIONS):
+  x={"uf":r["uf"],"estado":r["estado"],"regiao":r["estado"],"chuva_observada_7d_mm":obs_values[i],"previsao_7d_mm":fc_values[i],"atualizado_em":today,"fonte":"Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)","latitude":r["lat"],"longitude":r["lon"],"avisos":batch_errors[:]}
+  if x["chuva_observada_7d_mm"] is None and x["previsao_7d_mm"] is None and r["uf"] in old_states:
+   x=old_states[r["uf"]]
+   x["aviso"]="Falha na atualização em lote; preservado último valor válido."
+  state_results.append(x)
  payload["meteorologia_estados"]={"atualizado_em":today,"observacao":"Precipitação acumulada nos últimos 7 dias por um ponto de referência em cada UF, estimada por arquivo/reanálise Open-Meteo; não representa a média espacial do estado e não é medição oficial INMET.","regioes":state_results}
  payload.setdefault("status",{})["ultima_execucao"]=datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
  ok=any(x.get("previsao_7d_mm") is not None or x.get("chuva_observada_7d_mm") is not None for x in results)
