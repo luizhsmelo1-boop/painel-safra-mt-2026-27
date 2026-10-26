@@ -1,0 +1,82 @@
+{
+  "plantio": {
+    "data_referencia": null,
+    "plantio_pct": null,
+    "avanco_semanal_pp": null,
+    "area_mi_ha": null,
+    "fonte": "Aguardando validação do boletim oficial do IMEA",
+    "regioes": [
+      {
+        "name": "Médio-Norte",
+        "city": "Sorriso",
+        "lat": -12.54,
+        "lon": -55.72,
+        "plantio_pct": null,
+        "date": null
+      },
+      {
+        "name": "Oeste",
+        "city": "Campo Novo do Parecis",
+        "lat": -13.66,
+        "lon": -57.89,
+        "plantio_pct": null,
+        "date": null
+      },
+      {
+        "name": "Norte",
+        "city": "Sinop",
+        "lat": -11.86,
+        "lon": -55.51,
+        "plantio_pct": null,
+        "date": null
+      },
+      {
+        "name": "Centro-Sul",
+        "city": "Cuiabá",
+        "lat": -15.6,
+        "lon": -56.1,
+        "plantio_pct": null,
+        "date": null
+      },
+      {
+        "name": "Noroeste",
+        "city": "Juína",
+        "lat": -11.42,
+        "lon": -58.76,
+        "plantio_pct": null,
+        "date": null
+      },
+      {
+        "name": "Nordeste",
+        "city": "Canarana",
+        "lat": -13.55,
+        "lon": -52.27,
+        "plantio_pct": null,
+        "date": null
+      },
+      {
+        "name": "Sudeste",
+        "city": "Primavera do Leste",
+        "lat": -15.56,
+        "lon": -54.3,
+        "plantio_pct": null,
+        "date": null
+      }
+    ]
+  },
+  "meteorologia": {
+    "atualizado_em": null,
+    "observacao": "Aguardando primeira execução do coletor Open-Meteo.",
+    "regioes": []
+  },
+  "historico_plantio": [],
+  "status": {
+    "ultima_execucao": "Painel inicializado; primeira execução automática pendente",
+    "meteorologia": "Pendente da primeira execução",
+    "plantio": "Pendente de validação manual com boletim oficial do IMEA",
+    "avisos": [
+      "Indicadores de plantio estão em branco para evitar divulgar valores não verificados.",
+      "A chuva observada usa dados de arquivo/reanálise Open-Meteo; não equivale a medição oficial INMET."
+    ]
+  }
+}
