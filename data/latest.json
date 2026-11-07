@@ -137,15 +137,15 @@
       },
       {
         "regiao": "Sudeste · Primavera do Leste",
-        "chuva_observada_7d_mm": null,
-        "dias_sem_chuva": null,
-        "previsao_7d_mm": 46.6,
+        "chuva_observada_7d_mm": 10.6,
+        "dias_sem_chuva": 3,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-07",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; não é observação oficial INMET)",
         "latitude": -15.56,
         "longitude": -54.3,
         "avisos": [
-          "arquivo: <urlopen error _ssl.c:994: The handshake operation timed out>"
+          "previsão: <urlopen error _ssl.c:994: The handshake operation timed out>"
         ]
       }
     ]
@@ -160,7 +160,7 @@
     }
   ],
   "status": {
-    "ultima_execucao": "2026-11-07 16:27 UTC",
+    "ultima_execucao": "2026-11-07 16:39 UTC",
     "meteorologia": "OK",
     "plantio": "Parcialmente integrado: percentual estadual e 3 regiões divulgadas; demais regiões aguardam confirmação",
     "avisos": [
