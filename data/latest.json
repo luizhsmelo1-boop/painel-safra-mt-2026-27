@@ -79,7 +79,7 @@
         "latitude": -12.54,
         "longitude": -55.72,
         "avisos": [
-          "previsão: <urlopen error _ssl.c:994: The handshake operation timed out>"
+          "previsão: HTTP Error 429: Too Many Requests"
         ]
       },
       {
@@ -92,7 +92,7 @@
         "latitude": -13.66,
         "longitude": -57.89,
         "avisos": [
-          "previsão: <urlopen error _ssl.c:994: The handshake operation timed out>"
+          "previsão: HTTP Error 429: Too Many Requests"
         ]
       },
       {
@@ -105,7 +105,7 @@
         "latitude": -11.86,
         "longitude": -55.51,
         "avisos": [
-          "previsão: <urlopen error _ssl.c:994: The handshake operation timed out>"
+          "previsão: HTTP Error 429: Too Many Requests"
         ]
       },
       {
@@ -118,7 +118,7 @@
         "latitude": -15.6,
         "longitude": -56.1,
         "avisos": [
-          "previsão: <urlopen error _ssl.c:994: The handshake operation timed out>"
+          "previsão: HTTP Error 429: Too Many Requests"
         ]
       },
       {
@@ -131,7 +131,7 @@
         "latitude": -11.42,
         "longitude": -58.76,
         "avisos": [
-          "previsão: <urlopen error _ssl.c:994: The handshake operation timed out>"
+          "previsão: HTTP Error 429: Too Many Requests"
         ]
       },
       {
@@ -144,19 +144,21 @@
         "latitude": -13.55,
         "longitude": -52.27,
         "avisos": [
-          "previsão: <urlopen error _ssl.c:994: The handshake operation timed out>"
+          "previsão: HTTP Error 429: Too Many Requests"
         ]
       },
       {
         "regiao": "Sudeste · Primavera do Leste",
         "chuva_observada_7d_mm": 21.4,
         "dias_sem_chuva": 1,
-        "previsao_7d_mm": 102.2,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; não é observação oficial INMET)",
         "latitude": -15.56,
         "longitude": -54.3,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       }
     ]
   },
@@ -170,7 +172,7 @@
     }
   ],
   "status": {
-    "ultima_execucao": "2026-11-14 16:39 UTC",
+    "ultima_execucao": "2026-11-14 16:44 UTC",
     "meteorologia": "OK",
     "plantio": "Parcialmente integrado: percentual estadual e 3 regiões divulgadas; demais regiões aguardam confirmação",
     "avisos": [
@@ -905,12 +907,14 @@
         "regiao": "Acre",
         "chuva_observada_7d_mm": 19.6,
         "dias_sem_chuva": 0,
-        "previsao_7d_mm": 27.0,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -9.02,
         "longitude": -70.81,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       },
       {
         "uf": "AL",
@@ -918,12 +922,14 @@
         "regiao": "Alagoas",
         "chuva_observada_7d_mm": 4.5,
         "dias_sem_chuva": 2,
-        "previsao_7d_mm": 2.7,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -9.57,
         "longitude": -36.78,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       },
       {
         "uf": "AP",
@@ -931,12 +937,14 @@
         "regiao": "Amapá",
         "chuva_observada_7d_mm": 9.0,
         "dias_sem_chuva": 2,
-        "previsao_7d_mm": 28.9,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": 1.41,
         "longitude": -51.77,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       },
       {
         "uf": "AM",
@@ -944,12 +952,14 @@
         "regiao": "Amazonas",
         "chuva_observada_7d_mm": 14.9,
         "dias_sem_chuva": 0,
-        "previsao_7d_mm": 19.0,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -3.47,
         "longitude": -65.1,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       },
       {
         "uf": "BA",
@@ -957,12 +967,14 @@
         "regiao": "Bahia",
         "chuva_observada_7d_mm": 13.9,
         "dias_sem_chuva": 1,
-        "previsao_7d_mm": 87.2,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -12.58,
         "longitude": -41.7,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       },
       {
         "uf": "CE",
@@ -970,12 +982,14 @@
         "regiao": "Ceará",
         "chuva_observada_7d_mm": 1.4,
         "dias_sem_chuva": 9,
-        "previsao_7d_mm": 2.7,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -5.2,
         "longitude": -39.53,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       },
       {
         "uf": "DF",
@@ -983,12 +997,14 @@
         "regiao": "Distrito Federal",
         "chuva_observada_7d_mm": 105.6,
         "dias_sem_chuva": 0,
-        "previsao_7d_mm": 38.0,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -15.8,
         "longitude": -47.88,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       },
       {
         "uf": "ES",
@@ -996,12 +1012,14 @@
         "regiao": "Espírito Santo",
         "chuva_observada_7d_mm": 57.2,
         "dias_sem_chuva": 0,
-        "previsao_7d_mm": 88.1,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -19.57,
         "longitude": -40.54,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       },
       {
         "uf": "GO",
@@ -1009,12 +1027,14 @@
         "regiao": "Goiás",
         "chuva_observada_7d_mm": 63.7,
         "dias_sem_chuva": 0,
-        "previsao_7d_mm": 66.5,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -15.93,
         "longitude": -49.25,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       },
       {
         "uf": "MA",
@@ -1022,12 +1042,14 @@
         "regiao": "Maranhão",
         "chuva_observada_7d_mm": 22.2,
         "dias_sem_chuva": 0,
-        "previsao_7d_mm": 13.7,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -5.42,
         "longitude": -45.44,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       },
       {
         "uf": "MT",
@@ -1035,12 +1057,14 @@
         "regiao": "Mato Grosso",
         "chuva_observada_7d_mm": 16.7,
         "dias_sem_chuva": 1,
-        "previsao_7d_mm": 125.0,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -12.64,
         "longitude": -55.42,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       },
       {
         "uf": "MS",
@@ -1048,12 +1072,14 @@
         "regiao": "Mato Grosso do Sul",
         "chuva_observada_7d_mm": 15.3,
         "dias_sem_chuva": 1,
-        "previsao_7d_mm": 68.3,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -20.77,
         "longitude": -54.78,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       },
       {
         "uf": "MG",
@@ -1061,12 +1087,14 @@
         "regiao": "Minas Gerais",
         "chuva_observada_7d_mm": 34.1,
         "dias_sem_chuva": 0,
-        "previsao_7d_mm": 90.1,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -18.51,
         "longitude": -44.55,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       },
       {
         "uf": "PA",
@@ -1074,12 +1102,14 @@
         "regiao": "Pará",
         "chuva_observada_7d_mm": 23.8,
         "dias_sem_chuva": 1,
-        "previsao_7d_mm": 3.2,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -3.79,
         "longitude": -52.48,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       },
       {
         "uf": "PB",
@@ -1087,12 +1117,14 @@
         "regiao": "Paraíba",
         "chuva_observada_7d_mm": 2.1,
         "dias_sem_chuva": 15,
-        "previsao_7d_mm": 5.6,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -7.12,
         "longitude": -36.72,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       },
       {
         "uf": "PR",
@@ -1100,12 +1132,14 @@
         "regiao": "Paraná",
         "chuva_observada_7d_mm": 16.0,
         "dias_sem_chuva": 0,
-        "previsao_7d_mm": 15.3,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -24.89,
         "longitude": -51.55,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       },
       {
         "uf": "PE",
@@ -1113,12 +1147,14 @@
         "regiao": "Pernambuco",
         "chuva_observada_7d_mm": 12.0,
         "dias_sem_chuva": 2,
-        "previsao_7d_mm": 7.7,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -8.38,
         "longitude": -37.86,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       },
       {
         "uf": "PI",
@@ -1126,12 +1162,14 @@
         "regiao": "Piauí",
         "chuva_observada_7d_mm": 17.5,
         "dias_sem_chuva": 0,
-        "previsao_7d_mm": 34.8,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -7.72,
         "longitude": -42.73,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       },
       {
         "uf": "RJ",
@@ -1139,12 +1177,14 @@
         "regiao": "Rio de Janeiro",
         "chuva_observada_7d_mm": 35.1,
         "dias_sem_chuva": 0,
-        "previsao_7d_mm": 40.9,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -22.25,
         "longitude": -42.66,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       },
       {
         "uf": "RN",
@@ -1152,12 +1192,14 @@
         "regiao": "Rio Grande do Norte",
         "chuva_observada_7d_mm": 2.3,
         "dias_sem_chuva": 5,
-        "previsao_7d_mm": 2.0,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -5.81,
         "longitude": -36.59,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       },
       {
         "uf": "RS",
@@ -1165,12 +1207,14 @@
         "regiao": "Rio Grande do Sul",
         "chuva_observada_7d_mm": 7.6,
         "dias_sem_chuva": 2,
-        "previsao_7d_mm": 82.7,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -30.03,
         "longitude": -53.2,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       },
       {
         "uf": "RO",
@@ -1178,12 +1222,14 @@
         "regiao": "Rondônia",
         "chuva_observada_7d_mm": 46.6,
         "dias_sem_chuva": 0,
-        "previsao_7d_mm": 26.4,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -10.83,
         "longitude": -63.34,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       },
       {
         "uf": "RR",
@@ -1191,12 +1237,14 @@
         "regiao": "Roraima",
         "chuva_observada_7d_mm": 16.9,
         "dias_sem_chuva": 1,
-        "previsao_7d_mm": 34.0,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": 2.05,
         "longitude": -61.4,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       },
       {
         "uf": "SC",
@@ -1204,12 +1252,14 @@
         "regiao": "Santa Catarina",
         "chuva_observada_7d_mm": 50.1,
         "dias_sem_chuva": 0,
-        "previsao_7d_mm": 36.2,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -27.24,
         "longitude": -50.22,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       },
       {
         "uf": "SP",
@@ -1217,12 +1267,14 @@
         "regiao": "São Paulo",
         "chuva_observada_7d_mm": 31.6,
         "dias_sem_chuva": 1,
-        "previsao_7d_mm": 23.3,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -22.19,
         "longitude": -48.79,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       },
       {
         "uf": "SE",
@@ -1230,12 +1282,14 @@
         "regiao": "Sergipe",
         "chuva_observada_7d_mm": 8.4,
         "dias_sem_chuva": 0,
-        "previsao_7d_mm": 7.7,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -10.57,
         "longitude": -37.45,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       },
       {
         "uf": "TO",
@@ -1243,12 +1297,14 @@
         "regiao": "Tocantins",
         "chuva_observada_7d_mm": 21.5,
         "dias_sem_chuva": 0,
-        "previsao_7d_mm": 86.6,
+        "previsao_7d_mm": null,
         "atualizado_em": "2026-11-14",
         "fonte": "Open-Meteo (arquivo/reanálise e modelo; ponto de referência estadual, não medição oficial INMET)",
         "latitude": -10.25,
         "longitude": -48.25,
-        "avisos": []
+        "avisos": [
+          "previsão: HTTP Error 429: Too Many Requests"
+        ]
       }
     ]
   },
